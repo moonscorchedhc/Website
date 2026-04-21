@@ -4,20 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Moon Scorched</title>
-  <meta name="description" content="Moon Scorched" />
+  <meta name="description" content="Moon Scorched - German Hardcore" />
   <style>
     :root {
       --bg: #050505;
-      --bg-soft: #0d0d0d;
+      --bg-soft: #0b0b0b;
+      --card: rgba(255,255,255,0.03);
+      --card-border: rgba(255,255,255,0.08);
       --text: #f3f0e6;
-      --muted: #b8b2a3;
-      --line: rgba(255,255,255,0.08);
-      --red: #8f0000;
-      --red-bright: #b10000;
-      --cream: #e5d4a3;
-      --shadow: 0 20px 60px rgba(0,0,0,0.45);
+      --muted: #b7b1a3;
+      --accent: #d2c08f;
+      --shadow: 0 18px 50px rgba(0,0,0,0.35);
       --radius: 18px;
-      --max: 1180px;
+      --max: 1120px;
     }
 
     * {
@@ -30,9 +29,7 @@
 
     body {
       margin: 0;
-      background:
-        radial-gradient(circle at top, rgba(120,0,0,0.12), transparent 35%),
-        linear-gradient(180deg, #050505 0%, #070707 100%);
+      background: linear-gradient(180deg, #040404 0%, #070707 100%);
       color: var(--text);
       font-family: Arial, Helvetica, sans-serif;
       line-height: 1.5;
@@ -44,51 +41,50 @@
     }
 
     img {
-      max-width: 100%;
       display: block;
+      max-width: 100%;
     }
 
     .site-header {
       position: sticky;
       top: 0;
-      z-index: 50;
+      z-index: 30;
       backdrop-filter: blur(10px);
-      background: rgba(5,5,5,0.82);
-      border-bottom: 1px solid var(--line);
+      background: rgba(5,5,5,0.86);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
     }
 
     .nav {
       width: min(var(--max), calc(100% - 32px));
       margin: 0 auto;
-      min-height: 74px;
+      min-height: 78px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 24px;
     }
 
-    .nav-brand {
+    .brand {
       display: flex;
       align-items: center;
       gap: 14px;
       min-width: 0;
     }
 
-    .nav-brand img {
+    .brand img {
       width: 46px;
       height: 46px;
       object-fit: cover;
       border-radius: 50%;
       border: 1px solid rgba(255,255,255,0.08);
-      box-shadow: var(--shadow);
     }
 
-    .nav-title {
+    .brand-name {
       font-size: 15px;
-      letter-spacing: 0.16em;
       text-transform: uppercase;
+      letter-spacing: 0.18em;
       font-weight: 700;
-      color: var(--cream);
+      color: var(--accent);
       white-space: nowrap;
     }
 
@@ -97,88 +93,47 @@
       align-items: center;
       gap: 18px;
       flex-wrap: wrap;
-      justify-content: flex-end;
     }
 
     .nav-links a {
       font-size: 13px;
-      letter-spacing: 0.14em;
       text-transform: uppercase;
+      letter-spacing: 0.14em;
       color: var(--muted);
-      transition: color 0.2s ease;
     }
 
     .nav-links a:hover {
-      color: var(--text);
+      color: #fff;
     }
 
     .hero {
       position: relative;
-      min-height: 92vh;
+      min-height: 88vh;
       display: flex;
       align-items: flex-end;
       overflow: hidden;
-      border-bottom: 1px solid var(--line);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
     }
 
-    .hero-photo {
+    .hero-bg {
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(180deg, rgba(0,0,0,0.18) 0%, rgba(0,0,0,0.38) 35%, rgba(0,0,0,0.84) 100%),
+        linear-gradient(180deg, rgba(0,0,0,0.22) 0%, rgba(0,0,0,0.35) 38%, rgba(0,0,0,0.84) 100%),
         url('moon-scorched_bandfoto_foto-alexander-marx.jpg.jpg') center top / cover no-repeat;
-      transform: scale(1.02);
-    }
-
-    .hero-moon {
-      position: absolute;
-      width: min(72vw, 860px);
-      aspect-ratio: 1 / 1;
-      left: 50%;
-      top: 46%;
-      transform: translate(-50%, -50%);
-      border-radius: 50%;
-      background:
-        radial-gradient(circle at 35% 35%, rgba(200,0,0,0.18), transparent 40%),
-        radial-gradient(circle, rgba(155,0,0,0.84) 0%, rgba(112,0,0,0.92) 62%, rgba(80,0,0,0.65) 100%);
-      filter: blur(6px);
-      opacity: 0.95;
-      box-shadow: 0 0 140px rgba(130,0,0,0.22);
-      z-index: 1;
-    }
-
-    .hero-logo {
-      position: absolute;
-      inset: 0;
-      background: url('moon_scorched_text_1.3.JPEG') center center / min(62vw, 760px) auto no-repeat;
-      opacity: 0.34;
-      mix-blend-mode: screen;
-      z-index: 2;
-      pointer-events: none;
-    }
-
-    .hero-fade {
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(180deg, rgba(0,0,0,0.08) 0%, rgba(0,0,0,0.18) 25%, rgba(0,0,0,0.58) 70%, #050505 100%);
-      z-index: 3;
     }
 
     .hero-inner {
       position: relative;
-      z-index: 4;
+      z-index: 2;
       width: min(var(--max), calc(100% - 32px));
       margin: 0 auto;
       padding: 140px 0 72px;
-      display: grid;
-      grid-template-columns: minmax(0, 1fr);
-      gap: 32px;
     }
 
     .hero-card {
-      max-width: 760px;
-      background: rgba(8,8,8,0.52);
+      max-width: 720px;
+      background: rgba(8,8,8,0.62);
       border: 1px solid rgba(255,255,255,0.08);
       border-radius: 24px;
       box-shadow: var(--shadow);
@@ -188,36 +143,34 @@
 
     .eyebrow {
       display: inline-block;
-      margin-bottom: 16px;
-      color: var(--cream);
+      margin-bottom: 14px;
+      color: var(--accent);
       font-size: 12px;
-      letter-spacing: 0.26em;
+      letter-spacing: 0.24em;
       text-transform: uppercase;
       font-weight: 700;
     }
 
     .hero h1 {
       margin: 0;
-      font-size: clamp(42px, 9vw, 96px);
-      line-height: 0.94;
-      letter-spacing: 0.08em;
+      font-size: clamp(44px, 9vw, 94px);
+      line-height: 0.95;
       text-transform: uppercase;
-      color: #ffffff;
-      text-shadow: 0 4px 24px rgba(0,0,0,0.45);
+      letter-spacing: 0.06em;
+      color: #fff;
     }
 
     .hero-sub {
-      margin: 18px 0 0;
+      margin: 16px 0 0;
       color: var(--muted);
-      font-size: clamp(15px, 2vw, 18px);
-      max-width: 620px;
+      font-size: clamp(15px, 2vw, 20px);
     }
 
     .hero-actions {
+      margin-top: 26px;
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
-      margin-top: 28px;
     }
 
     .btn {
@@ -229,9 +182,9 @@
       border-radius: 999px;
       font-size: 14px;
       font-weight: 700;
-      letter-spacing: 0.08em;
       text-transform: uppercase;
-      transition: transform 0.18s ease, background 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+      letter-spacing: 0.08em;
+      transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
       border: 1px solid transparent;
     }
 
@@ -240,21 +193,14 @@
     }
 
     .btn-primary {
-      background: linear-gradient(180deg, var(--red-bright) 0%, var(--red) 100%);
-      color: #fff;
-      box-shadow: 0 10px 30px rgba(145,0,0,0.28);
+      background: #fff;
+      color: #000;
     }
 
     .btn-secondary {
       background: rgba(255,255,255,0.06);
-      color: var(--text);
+      color: #fff;
       border-color: rgba(255,255,255,0.12);
-    }
-
-    .btn-ghost {
-      background: transparent;
-      color: var(--cream);
-      border-color: rgba(229,212,163,0.22);
     }
 
     .section {
@@ -269,20 +215,20 @@
 
     .section-label {
       display: inline-block;
-      color: var(--cream);
+      margin-bottom: 12px;
+      color: var(--accent);
       font-size: 12px;
       letter-spacing: 0.24em;
       text-transform: uppercase;
       font-weight: 700;
-      margin-bottom: 12px;
     }
 
     .section h2 {
       margin: 0;
-      font-size: clamp(28px, 4vw, 48px);
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
+      font-size: clamp(30px, 4vw, 52px);
       line-height: 1;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
     }
 
     .section-intro {
@@ -292,66 +238,32 @@
       font-size: 17px;
     }
 
-    .cards-2 {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 24px;
-    }
-
-    .card {
-      background: linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.015) 100%);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 28px 24px;
-      box-shadow: var(--shadow);
-    }
-
-    .card h3 {
-      margin: 0 0 14px;
-      font-size: 15px;
-      color: var(--cream);
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-    }
-
-    .card p {
-      margin: 0;
-      color: var(--text);
-    }
-
     .links-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 18px;
-      margin-top: 10px;
     }
 
     .link-card {
-      position: relative;
-      overflow: hidden;
-      min-height: 150px;
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
       padding: 22px;
-      border-radius: 22px;
-      border: 1px solid var(--line);
-      background:
-        linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)),
-        radial-gradient(circle at top right, rgba(170,0,0,0.20), transparent 35%),
-        #0a0a0a;
       box-shadow: var(--shadow);
-      transition: transform 0.18s ease, border-color 0.18s ease;
+      transition: transform 0.15s ease, border-color 0.15s ease;
     }
 
     .link-card:hover {
       transform: translateY(-2px);
-      border-color: rgba(229,212,163,0.18);
+      border-color: rgba(255,255,255,0.16);
     }
 
     .link-card small {
       display: block;
       color: var(--muted);
+      font-size: 11px;
       text-transform: uppercase;
       letter-spacing: 0.18em;
-      font-size: 11px;
       margin-bottom: 12px;
     }
 
@@ -365,94 +277,103 @@
 
     .link-card span {
       display: block;
-      color: var(--cream);
-      font-size: 14px;
-      letter-spacing: 0.06em;
+      color: var(--accent);
+      font-size: 15px;
+    }
+
+    .bio-wrap {
+      max-width: 860px;
+    }
+
+    .bio-card {
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: 28px 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .bio-card h3 {
+      margin: 0 0 16px;
+      color: var(--accent);
+      font-size: 15px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+    }
+
+    .bio-card p {
+      margin: 0;
+      color: #f1f1f1;
+      font-size: 18px;
+      line-height: 1.7;
     }
 
     .shows-list {
       display: grid;
-      gap: 14px;
+      gap: 16px;
     }
 
     .show-item {
       display: grid;
-      grid-template-columns: 140px minmax(0, 1fr) auto;
-      gap: 18px;
-      align-items: center;
-      padding: 18px 20px;
-      background: rgba(255,255,255,0.03);
-      border: 1px solid var(--line);
-      border-radius: 16px;
+      grid-template-columns: 160px minmax(0, 1fr);
+      gap: 20px;
+      align-items: start;
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: 18px;
+      padding: 22px 20px;
       box-shadow: var(--shadow);
     }
 
     .show-date {
-      color: var(--cream);
+      color: var(--accent);
       font-size: 14px;
       font-weight: 700;
-      letter-spacing: 0.12em;
       text-transform: uppercase;
+      letter-spacing: 0.14em;
+      white-space: nowrap;
     }
 
     .show-main strong {
       display: block;
-      font-size: 20px;
+      font-size: 22px;
       color: #fff;
       margin-bottom: 4px;
+      line-height: 1.2;
     }
 
     .show-main span {
+      display: block;
       color: var(--muted);
-      font-size: 15px;
-    }
-
-    .show-tag {
-      padding: 9px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(229,212,163,0.18);
-      color: var(--cream);
-      font-size: 12px;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      white-space: nowrap;
+      font-size: 17px;
     }
 
     .footer {
       width: min(var(--max), calc(100% - 32px));
       margin: 0 auto;
       padding: 0 0 42px;
-      color: #8e8a80;
+      color: #8f8b80;
       font-size: 13px;
       text-transform: uppercase;
       letter-spacing: 0.12em;
     }
 
-    @media (max-width: 980px) {
-      .cards-2,
+    @media (max-width: 900px) {
       .links-grid {
         grid-template-columns: 1fr;
       }
 
       .show-item {
         grid-template-columns: 1fr;
-        align-items: flex-start;
-      }
-
-      .show-tag {
-        white-space: normal;
+        gap: 12px;
       }
     }
 
     @media (max-width: 720px) {
       .nav {
-        align-items: flex-start;
         padding: 14px 0;
         flex-direction: column;
-      }
-
-      .nav-links {
-        gap: 12px;
+        align-items: flex-start;
       }
 
       .hero {
@@ -467,18 +388,12 @@
         padding: 22px 18px;
       }
 
-      .hero-logo {
-        background-size: 88vw auto;
-        opacity: 0.26;
-      }
-
-      .hero-moon {
-        width: 92vw;
-        top: 40%;
-      }
-
       .section {
         padding: 64px 0;
+      }
+
+      .bio-card p {
+        font-size: 17px;
       }
     }
   </style>
@@ -487,13 +402,13 @@
 
   <header class="site-header">
     <div class="nav">
-      <div class="nav-brand">
+      <div class="brand">
         <img src="moon_scorched_text_1.3.JPEG" alt="Moon Scorched Logo" />
-        <div class="nav-title">Moon Scorched</div>
+        <div class="brand-name">Moon Scorched</div>
       </div>
 
       <nav class="nav-links">
-        <a href="#about">Bio</a>
+        <a href="#bio">Bio</a>
         <a href="#shows">Shows</a>
         <a href="#links">Links</a>
         <a href="mailto:contact@moonscorched.de">Contact</a>
@@ -502,22 +417,18 @@
   </header>
 
   <section class="hero">
-    <div class="hero-photo"></div>
-    <div class="hero-moon"></div>
-    <div class="hero-logo"></div>
-    <div class="hero-fade"></div>
+    <div class="hero-bg"></div>
 
     <div class="hero-inner">
       <div class="hero-card">
         <div class="eyebrow">Hardcore / Germany</div>
-        <h1>Moon<br />Scorched</h1>
-        <p class="hero-sub">German Hardcore
-        </p>
+        <h1>Moon<br>Scorched</h1>
+        <p class="hero-sub">German Hardcore</p>
 
         <div class="hero-actions">
           <a class="btn btn-primary" href="https://linktr.ee/Moon_Scorched" target="_blank" rel="noopener noreferrer">All Links</a>
           <a class="btn btn-secondary" href="#shows">Shows</a>
-          <a class="btn btn-ghost" href="mailto:contact@moonscorched.de">Contact</a>
+          <a class="btn btn-secondary" href="mailto:contact@moonscorched.de">Contact</a>
         </div>
       </div>
     </div>
@@ -527,16 +438,13 @@
     <div class="section-header">
       <div class="section-label">Connect</div>
       <h2>Links</h2>
-      <p class="section-intro">
-        Pack hier nur das rein, was wirklich wichtig ist. Kein Overload, keine tote Fläche.
-      </p>
     </div>
 
     <div class="links-grid">
       <a class="link-card" href="https://linktr.ee/Moon_Scorched" target="_blank" rel="noopener noreferrer">
-        <small>Central Hub</small>
+        <small>Central</small>
         <strong>All Links</strong>
-        <span>Linktree öffnen</span>
+        <span>linker.ee/Moon_Scorched</span>
       </a>
 
       <a class="link-card" href="mailto:contact@moonscorched.de">
@@ -545,48 +453,24 @@
         <span>contact@moonscorched.de</span>
       </a>
 
-      <a class="link-card" href="https://www.instagram.com/Moonscorchedhc" target="_blank" rel="noopener noreferrer">
+      <a class="link-card" href="https://instagram.com/moonscorchedhc" target="_blank" rel="noopener noreferrer">
         <small>Social</small>
         <strong>Instagram</strong>
-        <span>@MoonScorchedHC</span>
+        <span>@moonscorchedhc</span>
       </a>
     </div>
   </section>
 
-  <section class="section" id="about">
+  <section class="section" id="bio">
     <div class="section-header">
       <div class="section-label">About</div>
       <h2>Band Bio</h2>
     </div>
 
-    <div class="cards-2">
-      <article class="card">
-        <h3>Deutsch</h3>
-        <p>
-          HIER DEINE DEUTSCHE BIO EINFÜGEN.
-          <br /><br />
-          Moon Scorched ist eine internationale Hardcore-Band aus Hamm, die unterschiedliche kulturelle Hintergründe vereint und eine gemeinsame Vision verfolgt: kompromisslosen, ehrlichen und schweren Hardcore.
-
-Ihr Sound lebt von massiven Riffs und einer dichten, aggressiven Atmosphäre. Schwere Grooves treffen auf harte Breaks und explosive Dynamik. Die Songs bauen Druck auf und lassen nur wenig Zeit zum Atmen. Inspiriert von Bands wie Desolated, Guilt Trip und Hard Reset steht Moon Scorched für rohe Energie und kompromisslose Härte.
-
-Der Kern der Band liegt auf der Bühne.
-Moon Scorched sind laut, intensiv und ungebremst. Shows, bei denen die aufgestaute Wut jedes Riff antreibt und jede Sekunde nach vorne drängt. Direkt, kraftvoll und emotional aufgeladen.
-
-Moon Scorched arbeiten derzeit an neuem Material und sind bereit für Shows, Festivals und Kollaborationen innerhalb Europas.
-
-Besetzung:
-Alex — Schlagzeug
-Artem — Bass
-Pierre — Gitarre
-Kos — Gesang
-        </p>
-      </article>
-
-      <article class="card">
+    <div class="bio-wrap">
+      <article class="bio-card">
         <h3>English</h3>
         <p>
-          INSERT YOUR ENGLISH BIO HERE.
-          <br /><br />
           Moon Scorched is an international hardcore band from Hamm, Germany, bringing together different cultural backgrounds under one shared vision: uncompromising, honest, and heavy hardcore.
 
 Their sound is driven by massive riffs and a dense, aggressive atmosphere. Heavy grooves collide with hard breaks and explosive dynamics. The songs build relentless pressure and leave little room to breathe. Inspired by bands like Desolated, Guilt Trip, and Hard Reset, Moon Scorched stand for raw energy and uncompromising intensity.
@@ -610,38 +494,31 @@ Kos — Vocals
     <div class="section-header">
       <div class="section-label">Live</div>
       <h2>Shows</h2>
-      <p class="section-intro">
-        28.08.26 - Galerie der Disziplinen
-      12.09.26 - H4 Stadtfest Hamm 
-      03.10.26 - Hardcore Fest Hamm </p>
     </div>
 
     <div class="shows-list">
       <div class="show-item">
-        <div class="show-date">12 Jul 2026</div>
+        <div class="show-date">28 Aug 2026</div>
         <div class="show-main">
-          <strong>Venue / Event Name</strong>
-          <span>Stadt, Land</span>
+          <strong>Galerie der Disziplinen</strong>
+          <span>Hamm, Germany</span>
         </div>
-        <div class="show-tag">Support / Festival / Headline</div>
       </div>
 
       <div class="show-item">
-        <div class="show-date">26 Aug 2026</div>
+        <div class="show-date">12 Sep 2026</div>
         <div class="show-main">
-          <strong>Venue / Event Name</strong>
-          <span>Stadt, Land</span>
+          <strong>H4 Stadtfest</strong>
+          <span>Hamm, Germany</span>
         </div>
-        <div class="show-tag">Support / Festival / Headline</div>
       </div>
 
       <div class="show-item">
-        <div class="show-date">14 Sep 2026</div>
+        <div class="show-date">03 Oct 2026</div>
         <div class="show-main">
-          <strong>Venue / Event Name</strong>
-          <span>Stadt, Land</span>
+          <strong>Hardcore Fest</strong>
+          <span>Hamm, Germany</span>
         </div>
-        <div class="show-tag">Support / Festival / Headline</div>
       </div>
     </div>
   </section>
