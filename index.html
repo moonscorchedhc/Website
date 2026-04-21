@@ -8,7 +8,6 @@
   <style>
     :root {
       --bg: #050505;
-      --bg-soft: #0b0b0b;
       --card: rgba(255,255,255,0.03);
       --card-border: rgba(255,255,255,0.08);
       --text: #f3f0e6;
@@ -119,7 +118,7 @@
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(180deg, rgba(0,0,0,0.12) 0%, rgba(0,0,0,0.22) 34%, rgba(0,0,0,0.72) 100%),
+        linear-gradient(180deg, rgba(0,0,0,0.12) 0%, rgba(0,0,0,0.20) 34%, rgba(0,0,0,0.70) 100%),
         url('moon-scorched_bandfoto_foto-alexander-marx.jpg.jpg') center top / cover no-repeat;
     }
 
@@ -133,12 +132,12 @@
 
     .hero-card {
       max-width: 720px;
-      background: rgba(8,8,8,0.42);
+      background: rgba(8,8,8,0.28);
       border: 1px solid rgba(255,255,255,0.08);
       border-radius: 24px;
       box-shadow: var(--shadow);
       padding: 28px 24px;
-      backdrop-filter: blur(5px);
+      backdrop-filter: blur(3px);
     }
 
     .hero h1 {
@@ -223,8 +222,9 @@
 
     .links-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: minmax(0, 1fr);
       gap: 18px;
+      max-width: 520px;
     }
 
     .link-card {
@@ -343,10 +343,6 @@
     }
 
     @media (max-width: 900px) {
-      .links-grid {
-        grid-template-columns: 1fr;
-      }
-
       .show-item {
         grid-template-columns: 1fr;
         gap: 12px;
@@ -365,12 +361,32 @@
       }
 
       .hero-inner {
-        padding: 110px 0 50px;
+        padding: 90px 0 40px;
       }
 
       .hero-card {
-        padding: 22px 18px;
-        background: rgba(8,8,8,0.34);
+        max-width: 100%;
+        padding: 22px 18px 20px;
+        background: rgba(8,8,8,0.14);
+        backdrop-filter: blur(1px);
+      }
+
+      .hero h1 {
+        font-size: clamp(38px, 13vw, 72px);
+      }
+
+      .hero-sub {
+        font-size: 17px;
+      }
+
+      .hero-actions {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+
+      .hero-actions .btn:first-child {
+        grid-column: 1 / -1;
       }
 
       .section {
@@ -429,18 +445,6 @@
         <small>Central</small>
         <strong>All Links</strong>
         <span>linktr.ee/Moon_Scorched</span>
-      </a>
-
-      <a class="link-card" href="mailto:contact@moonscorched.de">
-        <small>Mail</small>
-        <strong>Contact</strong>
-        <span>contact@moonscorched.de</span>
-      </a>
-
-      <a class="link-card" href="https://instagram.com/moonscorchedhc" target="_blank" rel="noopener noreferrer">
-        <small>Social</small>
-        <strong>Instagram</strong>
-        <span>@moonscorchedhc</span>
       </a>
     </div>
   </section>
