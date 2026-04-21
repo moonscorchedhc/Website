@@ -4,222 +4,564 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Moon Scorched</title>
-
+  <meta name="description" content="Moon Scorched - German Hardcore" />
   <style>
     :root {
       --bg: #050505;
+      --card: rgba(255,255,255,0.03);
+      --card-border: rgba(255,255,255,0.08);
       --text: #f3f0e6;
       --muted: #b7b1a3;
       --accent: #d2c08f;
+      --shadow: 0 18px 50px rgba(0,0,0,0.35);
+      --radius: 18px;
+      --max: 1120px;
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      background: linear-gradient(180deg, #040404 0%, #070707 100%);
       color: var(--text);
-      background:
-        url('moon-bg.png') center 120% / 600px no-repeat,
-        linear-gradient(#040404, #070707);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.5;
     }
 
-    @media (max-width: 720px) {
-      body {
-        background:
-          url('moon-bg.png') center 110% / 380px no-repeat,
-          linear-gradient(#040404, #070707);
-      }
+    a {
+      color: inherit;
+      text-decoration: none;
     }
 
-    a { text-decoration: none; color: inherit; }
+    img {
+      display: block;
+      max-width: 100%;
+    }
 
-    .header {
+    .site-header {
       position: sticky;
       top: 0;
-      background: rgba(0,0,0,0.85);
-      backdrop-filter: blur(8px);
+      z-index: 30;
+      backdrop-filter: blur(10px);
+      background: rgba(5,5,5,0.86);
       border-bottom: 1px solid rgba(255,255,255,0.08);
-      z-index: 10;
     }
 
     .nav {
-      max-width: 1100px;
-      margin: auto;
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+      min-height: 78px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      padding: 16px;
+      justify-content: space-between;
+      gap: 24px;
     }
 
     .brand {
       display: flex;
       align-items: center;
-      gap: 10px;
-      cursor: pointer;
+      gap: 14px;
+      min-width: 0;
     }
 
     .brand img {
-      width: 40px;
+      width: 46px;
+      height: 46px;
+      object-fit: cover;
       border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.08);
     }
 
-    .brand span {
-      color: var(--accent);
-      letter-spacing: 2px;
-      font-size: 14px;
-    }
-
-    .links a {
-      margin-left: 16px;
-      font-size: 12px;
-      color: var(--muted);
+    .brand-name {
+      font-size: 15px;
       text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-weight: 700;
+      color: var(--accent);
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--muted);
+    }
+
+    .nav-links a:hover {
+      color: #fff;
     }
 
     .hero {
-      height: 90vh;
+      position: relative;
+      min-height: 88vh;
       display: flex;
       align-items: flex-end;
-      background:
-        linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.9)),
-        url('moon-scorched_bandfoto_foto-alexander-marx.jpg.jpg') center / cover;
+      overflow: hidden;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
     }
 
-    .hero-box {
-      margin: 40px;
-      padding: 20px;
-      background: rgba(0,0,0,0.45);
-      backdrop-filter: blur(6px);
-      border-radius: 20px;
-      max-width: 600px;
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(0,0,0,0.12) 0%, rgba(0,0,0,0.20) 34%, rgba(0,0,0,0.70) 100%),
+        url('moon-scorched_bandfoto_foto-alexander-marx.jpg.jpg') center top / cover no-repeat;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+      padding: 140px 0 72px;
+    }
+
+    .hero-card {
+      max-width: 720px;
+      background: rgba(8,8,8,0.28);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      padding: 28px 24px;
+      backdrop-filter: blur(3px);
     }
 
     .hero h1 {
       margin: 0;
-      font-size: 60px;
-      line-height: 1;
+      font-size: clamp(44px, 9vw, 94px);
+      line-height: 0.95;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #fff;
     }
 
-    .hero p {
+    .hero-sub {
+      margin: 16px 0 0;
       color: var(--muted);
+      font-size: clamp(15px, 2vw, 20px);
     }
 
-    .buttons {
-      margin-top: 16px;
+    .hero-actions {
+      margin-top: 26px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
     }
 
     .btn {
-      padding: 10px 16px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 18px;
       border-radius: 999px;
-      margin-right: 10px;
-      font-size: 12px;
+      font-size: 14px;
+      font-weight: 700;
       text-transform: uppercase;
-      border: 1px solid rgba(255,255,255,0.2);
+      letter-spacing: 0.08em;
+      transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+      border: 1px solid transparent;
     }
 
-    .btn.primary {
-      background: white;
-      color: black;
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      background: #fff;
+      color: #000;
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.06);
+      color: #fff;
+      border-color: rgba(255,255,255,0.12);
+    }
+
+    /* Mond-Hintergrund nur unterhalb des Hero-Bereichs */
+    .lower-sections {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .lower-sections::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        url('moon-bg.png') center 140px / 620px no-repeat;
+      opacity: 0.16;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .lower-sections::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(
+          to bottom,
+          rgba(5,5,5,0.96) 0%,
+          rgba(5,5,5,0.72) 18%,
+          rgba(5,5,5,0.84) 36%,
+          rgba(5,5,5,0.92) 100%
+        );
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .lower-sections > * {
+      position: relative;
+      z-index: 1;
     }
 
     .section {
-      max-width: 1100px;
-      margin: auto;
-      padding: 60px 16px;
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+      padding: 84px 0;
     }
 
-    h2 {
-      margin-bottom: 20px;
-      text-transform: uppercase;
+    .section-header {
+      margin-bottom: 28px;
     }
 
-    .card {
-      background: rgba(255,255,255,0.03);
-      padding: 20px;
-      border-radius: 14px;
-      margin-bottom: 16px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 40px 0;
+    .section-label {
+      display: inline-block;
+      margin-bottom: 12px;
+      color: var(--accent);
       font-size: 12px;
-      color: #777;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .section h2 {
+      margin: 0;
+      font-size: clamp(30px, 4vw, 52px);
+      line-height: 1;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .links-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 18px;
+      max-width: 520px;
+    }
+
+    .link-card {
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+      transition: transform 0.15s ease, border-color 0.15s ease;
+    }
+
+    .link-card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(255,255,255,0.16);
+    }
+
+    .link-card small {
+      display: block;
+      color: var(--muted);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      margin-bottom: 12px;
+    }
+
+    .link-card strong {
+      display: block;
+      font-size: 22px;
+      line-height: 1.1;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+
+    .link-card span {
+      display: block;
+      color: var(--accent);
+      font-size: 15px;
+    }
+
+    .bio-wrap {
+      max-width: 860px;
+    }
+
+    .bio-card {
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: 28px 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .bio-card h3 {
+      margin: 0 0 16px;
+      color: var(--accent);
+      font-size: 15px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+    }
+
+    .bio-card p {
+      margin: 0;
+      color: #f1f1f1;
+      font-size: 18px;
+      line-height: 1.7;
+      white-space: pre-line;
+    }
+
+    .shows-list {
+      display: grid;
+      gap: 16px;
+    }
+
+    .show-item {
+      display: grid;
+      grid-template-columns: 160px minmax(0, 1fr);
+      gap: 20px;
+      align-items: start;
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: 18px;
+      padding: 22px 20px;
+      box-shadow: var(--shadow);
+    }
+
+    .show-date {
+      color: var(--accent);
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      white-space: nowrap;
+    }
+
+    .show-main strong {
+      display: block;
+      font-size: 22px;
+      color: #fff;
+      margin-bottom: 4px;
+      line-height: 1.2;
+    }
+
+    .show-main span {
+      display: block;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .footer {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+      padding: 0 0 42px;
+      color: #8f8b80;
+      font-size: 13px;
+      letter-spacing: 0.08em;
+    }
+
+    .footer a {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    @media (max-width: 900px) {
+      .show-item {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .nav {
+        padding: 14px 0;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .hero-inner {
+        padding: 90px 0 40px;
+      }
+
+      .hero-card {
+        max-width: 100%;
+        padding: 22px 18px 20px;
+        background: rgba(8,8,8,0.14);
+        backdrop-filter: blur(1px);
+      }
+
+      .hero h1 {
+        font-size: clamp(38px, 13vw, 72px);
+      }
+
+      .hero-sub {
+        font-size: 17px;
+      }
+
+      .hero-actions {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+
+      .hero-actions .btn:first-child {
+        grid-column: 1 / -1;
+      }
+
+      .lower-sections::before {
+        background:
+          url('moon-bg.png') center 100px / 360px no-repeat;
+        opacity: 0.18;
+      }
+
+      .section {
+        padding: 64px 0;
+      }
+
+      .bio-card p {
+        font-size: 17px;
+      }
     }
   </style>
 </head>
+<body id="top">
 
-<body>
+  <header class="site-header">
+    <div class="nav">
+      <a href="#top" class="brand">
+        <img src="moon_scorched_text_1.3.JPEG" alt="Moon Scorched Logo" />
+        <div class="brand-name">Moon Scorched</div>
+      </a>
 
-<header class="header">
-  <div class="nav">
-    <div class="brand" onclick="window.scrollTo({top:0, behavior:'smooth'})">
-      <img src="moon_scorched_text_1.3.JPEG">
-      <span>MOON SCORCHED</span>
+      <nav class="nav-links">
+        <a href="#bio">Bio</a>
+        <a href="#shows">Shows</a>
+        <a href="#links">Links</a>
+        <a href="mailto:contact@moonscorched.de">Contact</a>
+      </nav>
     </div>
+  </header>
 
-    <div class="links">
-      <a href="#bio">Bio</a>
-      <a href="#shows">Shows</a>
-      <a href="#links">Links</a>
-      <a href="mailto:contact@moonscorched.de">Contact</a>
+  <section class="hero">
+    <div class="hero-bg"></div>
+
+    <div class="hero-inner">
+      <div class="hero-card">
+        <h1>Moon<br>Scorched</h1>
+        <p class="hero-sub">German Hardcore</p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://linktr.ee/Moon_Scorched" target="_blank" rel="noopener noreferrer">All Links</a>
+          <a class="btn btn-secondary" href="#shows">Shows</a>
+          <a class="btn btn-secondary" href="mailto:contact@moonscorched.de">Contact</a>
+        </div>
+      </div>
     </div>
+  </section>
+
+  <div class="lower-sections">
+    <section class="section" id="links">
+      <div class="section-header">
+        <div class="section-label">Connect</div>
+        <h2>Links</h2>
+      </div>
+
+      <div class="links-grid">
+        <a class="link-card" href="https://linktr.ee/Moon_Scorched" target="_blank" rel="noopener noreferrer">
+          <small>Central</small>
+          <strong>All Links</strong>
+          <span>linktr.ee/Moon_Scorched</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="section" id="bio">
+      <div class="section-header">
+        <div class="section-label">About</div>
+        <h2>Band Bio</h2>
+      </div>
+
+      <div class="bio-wrap">
+        <article class="bio-card">
+          <h3>English</h3>
+          <p>Moon Scorched is an international hardcore band from Hamm, Germany, bringing together different cultural backgrounds under one shared vision: uncompromising, honest, and heavy hardcore.
+
+Their sound is driven by massive riffs and a dense, aggressive atmosphere. Heavy grooves collide with hard breaks and explosive dynamics. The songs build relentless pressure and leave little room to breathe. Inspired by bands like Desolated, Guilt Trip, and Hard Reset, Moon Scorched stand for raw energy and uncompromising intensity.
+
+The core of the band lies on stage.
+Moon Scorched are loud, intense, and unrestrained—shows where built-up anger drives every riff and every second pushes forward. Direct, powerful, and emotionally charged.
+
+Moon Scorched are currently working on new material and are ready for shows, festivals, and collaborations across Europe.
+
+Line-up:
+Alex — Drums
+Artem — Bass
+Pierre — Guitar
+Kos — Vocals</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="shows">
+      <div class="section-header">
+        <div class="section-label">Live</div>
+        <h2>Shows</h2>
+      </div>
+
+      <div class="shows-list">
+        <div class="show-item">
+          <div class="show-date">28 Aug 2026</div>
+          <div class="show-main">
+            <strong>Galerie der Disziplinen</strong>
+            <span>Hamm, Germany</span>
+          </div>
+        </div>
+
+        <div class="show-item">
+          <div class="show-date">12 Sep 2026</div>
+          <div class="show-main">
+            <strong>H4 Stadtfest</strong>
+            <span>Hamm, Germany</span>
+          </div>
+        </div>
+
+        <div class="show-item">
+          <div class="show-date">03 Oct 2026</div>
+          <div class="show-main">
+            <strong>Hardcore Fest</strong>
+            <span>Hamm, Germany</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      © 2026 Moon Scorched — <a href="impressum.html">Impressum</a> — <a href="datenschutz.html">Datenschutz</a>
+    </footer>
   </div>
-</header>
-
-<section class="hero">
-  <div class="hero-box">
-    <h1>MOON<br>SCORCHED</h1>
-    <p>German Hardcore</p>
-
-    <div class="buttons">
-      <a class="btn primary" href="https://linktr.ee/Moon_Scorched" target="_blank">All Links</a>
-      <a class="btn" href="#shows">Shows</a>
-      <a class="btn" href="mailto:contact@moonscorched.de">Contact</a>
-    </div>
-  </div>
-</section>
-
-<section id="links" class="section">
-  <h2>Links</h2>
-
-  <div class="card">
-    <a href="https://linktr.ee/Moon_Scorched" target="_blank">
-      Linktree öffnen
-    </a>
-  </div>
-</section>
-
-<section id="bio" class="section">
-  <h2>Band Bio</h2>
-
-  <div class="card">
-    Moon Scorched is an international hardcore band from Hamm, Germany...
-  </div>
-</section>
-
-<section id="shows" class="section">
-  <h2>Shows</h2>
-
-  <div class="card">
-    28 Aug 2026 – Galerie der Disziplinen – Hamm
-  </div>
-
-  <div class="card">
-    12 Sep 2026 – H4 Stadtfest – Hamm
-  </div>
-
-  <div class="card">
-    03 Oct 2026 – Hardcore Fest – Hamm
-  </div>
-</section>
-
-<footer>
-  © Moon Scorched – 
-  <a href="impressum.html">Impressum</a> – 
-  <a href="datenschutz.html">Datenschutz</a>
-</footer>
 
 </body>
 </html>
