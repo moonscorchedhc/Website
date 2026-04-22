@@ -32,6 +32,7 @@
       color: var(--text);
       font-family: Arial, Helvetica, sans-serif;
       line-height: 1.5;
+      overflow-x: hidden;
     }
 
     a {
@@ -47,7 +48,7 @@
     .site-header {
       position: sticky;
       top: 0;
-      z-index: 30;
+      z-index: 50;
       backdrop-filter: blur(10px);
       background: rgba(5,5,5,0.86);
       border-bottom: 1px solid rgba(255,255,255,0.08);
@@ -124,7 +125,7 @@
 
     .hero-inner {
       position: relative;
-      z-index: 2;
+      z-index: 3;
       width: min(var(--max), calc(100% - 32px));
       margin: 0 auto;
       padding: 140px 0 72px;
@@ -194,11 +195,10 @@
 
     .lower-sections {
       position: relative;
-      overflow: hidden;
+      z-index: 1;
     }
 
-    .lower-sections::before {
-      content: "";
+    .moon {
       position: fixed;
       top: 72vh;
       left: 50%;
@@ -206,33 +206,14 @@
       width: 720px;
       height: 720px;
       background: url('moon-bg.png') center / contain no-repeat;
-      opacity: 0.26;
+      opacity: 0.28;
       pointer-events: none;
       z-index: 0;
-    }
-
-    .lower-sections::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(
-          to bottom,
-          rgba(5,5,5,0.82) 0%,
-          rgba(5,5,5,0.72) 14%,
-          rgba(5,5,5,0.82) 28%,
-          rgba(5,5,5,0.90) 100%
-        );
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    .lower-sections > * {
-      position: relative;
-      z-index: 1;
     }
 
     .section {
+      position: relative;
+      z-index: 1;
       width: min(var(--max), calc(100% - 32px));
       margin: 0 auto;
       padding: 84px 0;
@@ -373,6 +354,8 @@
     }
 
     .footer {
+      position: relative;
+      z-index: 1;
       width: min(var(--max), calc(100% - 32px));
       margin: 0 auto;
       padding: 0 0 42px;
@@ -433,7 +416,7 @@
         grid-column: 1 / -1;
       }
 
-      .lower-sections::before {
+      .moon {
         top: 68vh;
         width: 460px;
         height: 460px;
@@ -486,6 +469,8 @@
   </section>
 
   <div class="lower-sections">
+    <div class="moon"></div>
+
     <section class="section" id="links">
       <div class="section-header">
         <div class="section-label">Connect</div>
