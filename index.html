@@ -192,22 +192,24 @@
       border-color: rgba(255,255,255,0.12);
     }
 
-    /* Mond-Hintergrund nur unterhalb des Hero-Bereichs */
     .lower-sections {
       position: relative;
       overflow: hidden;
     }
 
     .lower-sections::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    url('moon-bg.png') center 420px / 620px no-repeat;
-  opacity: 0.28;
-  pointer-events: none;
-  z-index: 0;
-}}
+      content: "";
+      position: fixed;
+      top: 72vh;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 720px;
+      height: 720px;
+      background: url('moon-bg.png') center / contain no-repeat;
+      opacity: 0.26;
+      pointer-events: none;
+      z-index: 0;
+    }
 
     .lower-sections::after {
       content: "";
@@ -216,10 +218,10 @@
       background:
         linear-gradient(
           to bottom,
-          rgba(5,5,5,0.96) 0%,
-          rgba(5,5,5,0.72) 18%,
-          rgba(5,5,5,0.84) 36%,
-          rgba(5,5,5,0.92) 100%
+          rgba(5,5,5,0.82) 0%,
+          rgba(5,5,5,0.72) 14%,
+          rgba(5,5,5,0.82) 28%,
+          rgba(5,5,5,0.90) 100%
         );
       pointer-events: none;
       z-index: 0;
@@ -432,9 +434,10 @@
       }
 
       .lower-sections::before {
-        background:
-          url('moon-bg.png') center 100px / 360px no-repeat;
-        opacity: 0.18;
+        top: 68vh;
+        width: 460px;
+        height: 460px;
+        opacity: 0.32;
       }
 
       .section {
