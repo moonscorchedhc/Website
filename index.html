@@ -196,19 +196,27 @@
     .lower-sections {
       position: relative;
       z-index: 1;
+      background: linear-gradient(180deg, rgba(5,5,5,1) 0%, rgba(7,7,7,1) 100%);
     }
 
-    .moon {
-      position: fixed;
-      top: 72vh;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 980px;
-      height: 980px;
-      background: url('moon-bg.png') center / contain no-repeat;
-      opacity: 0.30;
-      pointer-events: none;
+    .moon-layer {
+      position: sticky;
+      top: 110px;
+      height: 0;
       z-index: 0;
+      pointer-events: none;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .moon-layer img {
+      width: min(88vw, 900px);
+      opacity: 0.30;
+      transform: translateY(10px);
+      user-select: none;
+      -webkit-user-drag: none;
+      filter: saturate(1.05);
     }
 
     .section {
@@ -255,6 +263,7 @@
       padding: 22px;
       box-shadow: var(--shadow);
       transition: transform 0.15s ease, border-color 0.15s ease;
+      backdrop-filter: blur(1px);
     }
 
     .link-card:hover {
@@ -295,6 +304,7 @@
       border-radius: 20px;
       padding: 28px 24px;
       box-shadow: var(--shadow);
+      backdrop-filter: blur(1px);
     }
 
     .bio-card h3 {
@@ -328,6 +338,7 @@
       border-radius: 18px;
       padding: 22px 20px;
       box-shadow: var(--shadow);
+      backdrop-filter: blur(1px);
     }
 
     .show-date {
@@ -416,13 +427,15 @@
         grid-column: 1 / -1;
       }
 
-      .moon {
-        top: 74vh;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 640px;
-        height: 640px;
-        opacity: 0.34;
+      .moon-layer {
+        top: 120px;
+      }
+
+      .moon-layer img {
+        width: 92vw;
+        max-width: 620px;
+        opacity: 0.36;
+        transform: translateY(30px);
       }
 
       .section {
@@ -471,7 +484,9 @@
   </section>
 
   <div class="lower-sections">
-    <div class="moon"></div>
+    <div class="moon-layer">
+      <img src="moon-bg.png" alt="" aria-hidden="true">
+    </div>
 
     <section class="section" id="links">
       <div class="section-header">
