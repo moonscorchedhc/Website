@@ -3,19 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Moon Scorched</title>
-  <meta name="description" content="Moon Scorched - German Hardcore" />
+
+  <title>Moon Scorched — Hardcore from Hamm</title>
+
+  <meta
+    name="description"
+    content="Moon Scorched — international hardcore from Hamm, Germany. Debut single White Hands out 19.08.2026."
+  />
+
   <style>
     :root {
       --bg: #050505;
-      --card: rgba(255,255,255,0.03);
-      --card-border: rgba(255,255,255,0.08);
-      --text: #f3f0e6;
-      --muted: #b7b1a3;
-      --accent: #d2c08f;
-      --shadow: 0 18px 50px rgba(0,0,0,0.35);
-      --radius: 18px;
-      --max: 1120px;
+      --surface: #0b0b0b;
+      --surface-2: #111111;
+      --text: #f2f0e9;
+      --muted: #aaa69d;
+      --line: rgba(255, 255, 255, 0.16);
+      --red: #b80f12;
+      --paper: #ece9df;
+      --max: 1160px;
     }
 
     * {
@@ -28,11 +34,23 @@
 
     body {
       margin: 0;
-      background: linear-gradient(180deg, #040404 0%, #070707 100%);
+      background: var(--bg);
       color: var(--text);
       font-family: Arial, Helvetica, sans-serif;
       line-height: 1.5;
       overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      pointer-events: none;
+      opacity: 0.055;
+      background-image:
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.7'/%3E%3C/svg%3E");
+      mix-blend-mode: screen;
     }
 
     a {
@@ -45,530 +63,1042 @@
       max-width: 100%;
     }
 
+    /* HEADER */
+
     .site-header {
       position: sticky;
       top: 0;
-      z-index: 50;
-      backdrop-filter: blur(10px);
-      background: rgba(5,5,5,0.86);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
+      z-index: 80;
+      background: rgba(236, 233, 223, 0.96);
+      color: #050505;
+      border-bottom: 2px solid #050505;
     }
 
     .nav {
       width: min(var(--max), calc(100% - 32px));
+      min-height: 70px;
       margin: 0 auto;
-      min-height: 78px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 24px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      min-width: 0;
+      gap: 28px;
     }
 
     .brand img {
-      width: 46px;
-      height: 46px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 1px solid rgba(255,255,255,0.08);
-    }
-
-    .brand-name {
-      font-size: 15px;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      font-weight: 700;
-      color: var(--accent);
-      white-space: nowrap;
+      width: auto;
+      height: 39px;
+      max-width: 230px;
+      object-fit: contain;
     }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 18px;
-      flex-wrap: wrap;
+      gap: 22px;
     }
 
     .nav-links a {
-      font-size: 13px;
+      position: relative;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.15em;
       text-transform: uppercase;
-      letter-spacing: 0.14em;
-      color: var(--muted);
     }
 
-    .nav-links a:hover {
-      color: #fff;
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 100%;
+      bottom: -6px;
+      height: 2px;
+      background: var(--red);
+      transition: right 0.18s ease;
     }
+
+    .nav-links a:hover::after {
+      right: 0;
+    }
+
+    /* HERO */
 
     .hero {
       position: relative;
-      min-height: 88vh;
+      min-height: calc(100svh - 70px);
       display: flex;
       align-items: flex-end;
       overflow: hidden;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
+      border-bottom: 2px solid var(--paper);
     }
 
     .hero-bg {
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(180deg, rgba(0,0,0,0.12) 0%, rgba(0,0,0,0.20) 34%, rgba(0,0,0,0.70) 100%),
-        url('moon-scorched_bandfoto_foto-alexander-marx.jpg.jpg') center top / cover no-repeat;
+        linear-gradient(
+          180deg,
+          rgba(0, 0, 0, 0.04) 0%,
+          rgba(0, 0, 0, 0.10) 38%,
+          rgba(0, 0, 0, 0.88) 100%
+        ),
+        url("9e6f47b5-440d-4006-ad9d-1db29c549d8b.jpeg")
+          center 26% / cover no-repeat;
+      filter: contrast(1.06);
+      transform: scale(1.01);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(0, 0, 0, 0.48),
+          transparent 48%
+        );
+      pointer-events: none;
     }
 
     .hero-inner {
       position: relative;
-      z-index: 3;
+      z-index: 2;
       width: min(var(--max), calc(100% - 32px));
       margin: 0 auto;
-      padding: 140px 0 72px;
+      padding: 160px 0 58px;
     }
 
-    .hero-card {
-      max-width: 720px;
-      background: rgba(8,8,8,0.28);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 24px;
-      box-shadow: var(--shadow);
-      padding: 28px 24px;
-      backdrop-filter: blur(3px);
+    .hero-logo {
+      width: min(820px, 91vw);
+      max-height: 245px;
+      object-fit: contain;
+      object-position: left center;
+      filter: drop-shadow(0 10px 24px rgba(0, 0, 0, 0.75));
     }
 
-    .hero h1 {
-      margin: 0;
-      font-size: clamp(44px, 9vw, 94px);
-      line-height: 0.95;
+    .hero-kicker {
+      margin: 22px 0 0;
+      font-size: clamp(14px, 1.8vw, 20px);
+      font-weight: 800;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: #fff;
     }
 
-    .hero-sub {
-      margin: 16px 0 0;
+    .release-strip {
+      margin-top: 26px;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px 18px;
+    }
+
+    .release-label,
+    .release-date {
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .release-label {
       color: var(--muted);
-      font-size: clamp(15px, 2vw, 20px);
+    }
+
+    .release-date {
+      color: #ffffff;
+    }
+
+    .release-title {
+      color: var(--paper);
+      font-size: clamp(28px, 4vw, 48px);
+      font-weight: 900;
+      letter-spacing: 0.03em;
+      line-height: 1;
+      text-transform: uppercase;
     }
 
     .hero-actions {
-      margin-top: 26px;
+      margin-top: 28px;
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
+      gap: 10px;
     }
 
     .btn {
+      min-height: 48px;
+      padding: 0 20px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 48px;
-      padding: 0 18px;
-      border-radius: 999px;
-      font-size: 14px;
-      font-weight: 700;
+      border: 1px solid rgba(255, 255, 255, 0.55);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
-      letter-spacing: 0.08em;
-      transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
-      border: 1px solid transparent;
-    }
-
-    .btn:hover {
-      transform: translateY(-1px);
+      transition:
+        background 0.15s ease,
+        color 0.15s ease,
+        border-color 0.15s ease;
     }
 
     .btn-primary {
-      background: #fff;
-      color: #000;
+      background: var(--paper);
+      border-color: var(--paper);
+      color: #050505;
     }
 
     .btn-secondary {
-      background: rgba(255,255,255,0.06);
-      color: #fff;
-      border-color: rgba(255,255,255,0.12);
+      background: rgba(0, 0, 0, 0.15);
     }
 
-    .lower-sections {
+    .btn:hover {
+      background: var(--red);
+      border-color: var(--red);
+      color: #ffffff;
+    }
+
+    /* MAIN */
+
+    .main {
       position: relative;
-      z-index: 1;
-      background: linear-gradient(180deg, rgba(5,5,5,1) 0%, rgba(7,7,7,1) 100%);
+      isolation: isolate;
+      background:
+        linear-gradient(
+          180deg,
+          #050505 0%,
+          #080808 100%
+        );
     }
 
-    .moon-layer {
-      position: sticky;
-      top: 110px;
-      height: 0;
-      z-index: 0;
+    .moon-watermark {
+      position: fixed;
+      z-index: -1;
+      left: 50%;
+      top: 55%;
+      width: min(78vw, 900px);
+      transform: translate(-50%, -50%);
+      opacity: 0.09;
       pointer-events: none;
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-    }
-
-    .moon-layer img {
-      width: min(88vw, 900px);
-      opacity: 0.30;
-      transform: translateY(10px);
-      user-select: none;
-      -webkit-user-drag: none;
-      filter: saturate(1.05);
+      filter: grayscale(1);
     }
 
     .section {
-      position: relative;
-      z-index: 1;
       width: min(var(--max), calc(100% - 32px));
       margin: 0 auto;
-      padding: 84px 0;
+      padding: 92px 0;
+      border-bottom: 1px solid var(--line);
     }
 
-    .section-header {
-      margin-bottom: 28px;
-    }
-
-    .section-label {
-      display: inline-block;
-      margin-bottom: 12px;
-      color: var(--accent);
+    .eyebrow {
+      margin-bottom: 14px;
+      color: var(--red);
       font-size: 12px;
-      letter-spacing: 0.24em;
+      font-weight: 900;
+      letter-spacing: 0.23em;
       text-transform: uppercase;
-      font-weight: 700;
     }
 
-    .section h2 {
+    h2 {
       margin: 0;
-      font-size: clamp(30px, 4vw, 52px);
-      line-height: 1;
+      font-size: clamp(36px, 6vw, 74px);
+      line-height: 0.94;
+      letter-spacing: -0.025em;
       text-transform: uppercase;
-      letter-spacing: 0.04em;
     }
 
-    .links-grid {
+    /* RELEASE */
+
+    .release-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1fr);
-      gap: 18px;
-      max-width: 520px;
+      grid-template-columns:
+        minmax(280px, 0.85fr)
+        minmax(0, 1.15fr);
+      gap: clamp(38px, 7vw, 100px);
+      align-items: center;
     }
 
-    .link-card {
-      background: var(--card);
-      border: 1px solid var(--card-border);
-      border-radius: 20px;
-      padding: 22px;
-      box-shadow: var(--shadow);
-      transition: transform 0.15s ease, border-color 0.15s ease;
-      backdrop-filter: blur(1px);
+    .cover-wrap {
+      position: relative;
+      background: #111111;
+      border: 1px solid var(--line);
     }
 
-    .link-card:hover {
-      transform: translateY(-2px);
-      border-color: rgba(255,255,255,0.16);
+    .cover-wrap::before {
+      content: "";
+      position: absolute;
+      inset: 14px -14px -14px 14px;
+      z-index: -1;
+      border: 1px solid var(--red);
     }
 
-    .link-card small {
-      display: block;
+    .cover-wrap img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+    }
+
+    .release-copy p {
+      max-width: 650px;
+      margin: 28px 0 0;
       color: var(--muted);
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      margin-bottom: 12px;
-    }
-
-    .link-card strong {
-      display: block;
-      font-size: 22px;
-      line-height: 1.1;
-      margin-bottom: 10px;
-      color: #fff;
-    }
-
-    .link-card span {
-      display: block;
-      color: var(--accent);
-      font-size: 15px;
-    }
-
-    .bio-wrap {
-      max-width: 860px;
-    }
-
-    .bio-card {
-      background: var(--card);
-      border: 1px solid var(--card-border);
-      border-radius: 20px;
-      padding: 28px 24px;
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(1px);
-    }
-
-    .bio-card h3 {
-      margin: 0 0 16px;
-      color: var(--accent);
-      font-size: 15px;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-    }
-
-    .bio-card p {
-      margin: 0;
-      color: #f1f1f1;
       font-size: 18px;
       line-height: 1.7;
-      white-space: pre-line;
     }
 
-    .shows-list {
+    .release-meta {
+      margin-top: 30px;
+      padding-top: 22px;
+      border-top: 1px solid var(--line);
       display: grid;
-      gap: 16px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .release-meta small {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--muted);
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .release-meta strong {
+      font-size: 18px;
+      text-transform: uppercase;
+    }
+
+    /* BIO */
+
+    .bio-layout {
+      margin-top: 44px;
+      display: grid;
+      grid-template-columns:
+        minmax(0, 1.2fr)
+        minmax(300px, 0.8fr);
+      gap: clamp(40px, 8vw, 110px);
+      align-items: start;
+    }
+
+    .bio-lead {
+      margin: 0;
+      font-size: clamp(26px, 3.7vw, 48px);
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -0.025em;
+    }
+
+    .bio-copy p {
+      margin: 0 0 22px;
+      color: #d7d4cb;
+      font-size: 18px;
+      line-height: 1.72;
+    }
+
+    .quote {
+      margin: 34px 0 0;
+      padding-left: 20px;
+      border-left: 4px solid var(--red);
+      color: #ffffff;
+      font-size: 22px;
+      font-weight: 800;
+      line-height: 1.3;
+      text-transform: uppercase;
+    }
+
+    /* FULL-WIDTH BAND PHOTO */
+
+    .full-photo {
+      width: 100%;
+      min-height: 62vw;
+      max-height: 850px;
+      position: relative;
+      border-bottom: 1px solid var(--line);
+      background:
+        linear-gradient(
+          180deg,
+          transparent 55%,
+          rgba(0, 0, 0, 0.85) 100%
+        ),
+        url("9e6f47b5-440d-4006-ad9d-1db29c549d8b.jpeg")
+          center center / cover no-repeat;
+    }
+
+    .full-photo span {
+      position: absolute;
+      left: max(16px, calc((100vw - var(--max)) / 2));
+      bottom: 26px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.72);
+    }
+
+    /* SHOWS */
+
+    .shows-list {
+      margin-top: 40px;
+      border-top: 1px solid var(--line);
     }
 
     .show-item {
       display: grid;
-      grid-template-columns: 160px minmax(0, 1fr);
-      gap: 20px;
-      align-items: start;
-      background: var(--card);
-      border: 1px solid var(--card-border);
-      border-radius: 18px;
-      padding: 22px 20px;
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(1px);
+      grid-template-columns: 190px minmax(0, 1fr) auto;
+      gap: 24px;
+      align-items: center;
+      padding: 25px 0;
+      border-bottom: 1px solid var(--line);
     }
 
     .show-date {
-      color: var(--accent);
-      font-size: 14px;
-      font-weight: 700;
-      text-transform: uppercase;
+      color: var(--red);
+      font-size: 13px;
+      font-weight: 900;
       letter-spacing: 0.14em;
-      white-space: nowrap;
+      text-transform: uppercase;
     }
 
     .show-main strong {
       display: block;
-      font-size: 22px;
-      color: #fff;
-      margin-bottom: 4px;
-      line-height: 1.2;
+      font-size: clamp(20px, 3vw, 31px);
+      line-height: 1.1;
+      text-transform: uppercase;
     }
 
     .show-main span {
-      display: block;
       color: var(--muted);
-      font-size: 17px;
+      font-size: 16px;
     }
 
+    .show-status {
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    /* LINE-UP */
+
+    .lineup-grid {
+      margin-top: 40px;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      border-top: 1px solid var(--line);
+      border-left: 1px solid var(--line);
+    }
+
+    .member {
+      padding: 24px 20px;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .member strong {
+      display: block;
+      font-size: 25px;
+      text-transform: uppercase;
+    }
+
+    .member span {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    /* LINKS */
+
+    .links-row {
+      margin-top: 38px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      border-top: 1px solid var(--line);
+      border-left: 1px solid var(--line);
+    }
+
+    .social-link {
+      min-height: 120px;
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      transition: background 0.15s ease;
+    }
+
+    .social-link small {
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .social-link strong {
+      font-size: clamp(21px, 3vw, 31px);
+      text-transform: uppercase;
+    }
+
+    .social-link:hover {
+      background: var(--red);
+    }
+
+    .social-link:hover small {
+      color: #ffffff;
+    }
+
+    /* FOOTER */
+
     .footer {
-      position: relative;
-      z-index: 1;
       width: min(var(--max), calc(100% - 32px));
       margin: 0 auto;
-      padding: 0 0 42px;
-      color: #8f8b80;
-      font-size: 13px;
+      padding: 38px 0 48px;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      color: #868278;
+      font-size: 12px;
       letter-spacing: 0.08em;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 18px;
     }
 
     .footer a {
       text-decoration: underline;
-      text-underline-offset: 3px;
+      text-underline-offset: 4px;
     }
 
-    @media (max-width: 900px) {
-      .show-item {
+    /* TABLET */
+
+    @media (max-width: 850px) {
+      .release-grid,
+      .bio-layout {
         grid-template-columns: 1fr;
-        gap: 12px;
+      }
+
+      .lineup-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .links-row {
+        grid-template-columns: 1fr;
+      }
+
+      .show-item {
+        grid-template-columns: 145px 1fr;
+      }
+
+      .show-status {
+        display: none;
       }
     }
 
-    @media (max-width: 720px) {
+    /* MOBILE */
+
+    @media (max-width: 700px) {
+      .site-header {
+        position: relative;
+      }
+
       .nav {
-        padding: 14px 0;
-        flex-direction: column;
+        padding: 13px 0;
         align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .brand img {
+        height: 32px;
+        max-width: 190px;
+      }
+
+      .nav-links {
+        width: 100%;
+        justify-content: space-between;
+        gap: 10px;
+      }
+
+      .nav-links a {
+        font-size: 10px;
       }
 
       .hero {
-        min-height: auto;
+        min-height: 82svh;
+      }
+
+      .hero-bg {
+        background-position: 58% top;
+      }
+
+      .hero::after {
+        background:
+          linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0.03),
+            rgba(0, 0, 0, 0.83)
+          );
       }
 
       .hero-inner {
-        padding: 90px 0 40px;
+        padding: 170px 0 34px;
       }
 
-      .hero-card {
-        max-width: 100%;
-        padding: 22px 18px 20px;
-        background: rgba(8,8,8,0.14);
-        backdrop-filter: blur(1px);
+      .hero-logo {
+        width: 96vw;
+        max-height: 160px;
       }
 
-      .hero h1 {
-        font-size: clamp(38px, 13vw, 72px);
+      .hero-kicker {
+        font-size: 12px;
       }
 
-      .hero-sub {
-        font-size: 17px;
+      .release-strip {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 5px;
       }
 
       .hero-actions {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 12px;
       }
 
       .hero-actions .btn:first-child {
         grid-column: 1 / -1;
       }
 
-      .moon-layer {
-        top: 120px;
-      }
-
-      .moon-layer img {
-        width: 92vw;
-        max-width: 620px;
-        opacity: 0.36;
-        transform: translateY(30px);
-      }
-
       .section {
-        padding: 64px 0;
+        padding: 68px 0;
       }
 
-      .bio-card p {
-        font-size: 17px;
+      .full-photo {
+        min-height: 92vw;
+        background-position: center;
+      }
+
+      .show-item {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      .lineup-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .release-meta {
+        grid-template-columns: 1fr;
+      }
+
+      .footer {
+        flex-direction: column;
       }
     }
   </style>
 </head>
+
 <body id="top">
 
   <header class="site-header">
     <div class="nav">
-      <a href="#top" class="brand">
-        <img src="moon_scorched_text_1.3.JPEG" alt="Moon Scorched Logo" />
-        <div class="brand-name">Moon Scorched</div>
+
+      <a
+        href="#top"
+        class="brand"
+        aria-label="Moon Scorched Startseite"
+      >
+        <img
+          src="logo_schwarze schrift.png"
+          alt="Moon Scorched"
+        />
       </a>
 
-      <nav class="nav-links">
+      <nav
+        class="nav-links"
+        aria-label="Hauptnavigation"
+      >
+        <a href="#release">Release</a>
         <a href="#bio">Bio</a>
         <a href="#shows">Shows</a>
         <a href="#links">Links</a>
         <a href="mailto:contact@moonscorched.de">Contact</a>
       </nav>
+
     </div>
   </header>
 
-  <section class="hero">
-    <div class="hero-bg"></div>
+  <main>
 
-    <div class="hero-inner">
-      <div class="hero-card">
-        <h1>Moon<br>Scorched</h1>
-        <p class="hero-sub">German Hardcore</p>
+    <section
+      class="hero"
+      aria-label="Moon Scorched"
+    >
+      <div class="hero-bg"></div>
+
+      <div class="hero-inner">
+
+        <img
+          class="hero-logo"
+          src="schrift_single_weiß.png"
+          alt="Moon Scorched"
+        />
+
+        <p class="hero-kicker">
+          Raw energy in motion
+        </p>
+
+        <div class="release-strip">
+          <span class="release-label">
+            Debut Single
+          </span>
+
+          <strong class="release-title">
+            White Hands
+          </strong>
+
+          <time
+            class="release-date"
+            datetime="2026-08-19"
+          >
+            19.08.2026
+          </time>
+        </div>
 
         <div class="hero-actions">
-          <a class="btn btn-primary" href="https://linktr.ee/Moon_Scorched" target="_blank" rel="noopener noreferrer">All Links</a>
-          <a class="btn btn-secondary" href="#shows">Shows</a>
-          <a class="btn btn-secondary" href="mailto:contact@moonscorched.de">Contact</a>
+
+          <a
+            class="btn btn-primary"
+            href="https://linktr.ee/Moon_Scorched"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            All Links
+          </a>
+
+          <a
+            class="btn btn-secondary"
+            href="#shows"
+          >
+            Shows
+          </a>
+
+          <a
+            class="btn btn-secondary"
+            href="mailto:contact@moonscorched.de"
+          >
+            Contact
+          </a>
+
         </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="lower-sections">
-    <div class="moon-layer">
-      <img src="moon-bg.png" alt="" aria-hidden="true">
-    </div>
-
-    <section class="section" id="links">
-      <div class="section-header">
-        <div class="section-label">Connect</div>
-        <h2>Links</h2>
-      </div>
-
-      <div class="links-grid">
-        <a class="link-card" href="https://linktr.ee/Moon_Scorched" target="_blank" rel="noopener noreferrer">
-          <small>Central</small>
-          <strong>All Links</strong>
-          <span>linktr.ee/Moon_Scorched</span>
-        </a>
       </div>
     </section>
 
-    <section class="section" id="bio">
-      <div class="section-header">
-        <div class="section-label">About</div>
+    <div class="main">
+
+      <img
+        class="moon-watermark"
+        src="mon_single.png"
+        alt=""
+        aria-hidden="true"
+      />
+
+      <section
+        class="section"
+        id="release"
+      >
+        <div class="release-grid">
+
+          <div class="cover-wrap">
+            <img
+              src="white hands.jpg"
+              alt="White Hands — Debütsingle von Moon Scorched"
+            />
+          </div>
+
+          <div class="release-copy">
+
+            <div class="eyebrow">
+              Debut Single
+            </div>
+
+            <h2>White Hands</h2>
+
+            <p>
+              The first chapter of what’s to come. Heavy grooves,
+              explosive breaks and raw emotion — Moon Scorched release
+              their debut single “White Hands” on 19.08.2026.
+            </p>
+
+            <div class="release-meta">
+
+              <div>
+                <small>Release</small>
+                <strong>19.08.2026</strong>
+              </div>
+
+              <div>
+                <small>Listen</small>
+
+                <strong>
+                  <a
+                    href="https://linktr.ee/Moon_Scorched"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    All platforms ↗
+                  </a>
+                </strong>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <section
+        class="section"
+        id="bio"
+      >
+        <div class="eyebrow">
+          About
+        </div>
+
         <h2>Band Bio</h2>
+
+        <div class="bio-layout">
+
+          <p class="bio-lead">
+            Moon Scorched is an international hardcore band from Hamm,
+            Germany, united by different cultural backgrounds and one
+            shared vision: honest, heavy, and unapologetically intense
+            hardcore.
+          </p>
+
+          <div class="bio-copy">
+
+            <p>
+              Built on crushing riffs, relentless grooves, and explosive
+              breakdowns, their sound is direct, aggressive, and impossible
+              to ignore. Influenced by bands like Desolated, Guilt Trip,
+              and Hard Reset, Moon Scorched channel anger, determination,
+              and raw emotion into songs that never let up.
+            </p>
+
+            <p>
+              The stage is where the band truly comes alive. Every show
+              is an explosion — loud, relentless, and honest. Every riff
+              carries weight, every breakdown demands a reaction, and
+              every moment is driven by the connection between the band
+              and the crowd.
+            </p>
+
+            <p>
+              No theatrics. No pretending. Just pure intensity from the
+              first note to the last.
+            </p>
+
+            <div class="quote">
+              Raw energy in motion.
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <div
+        class="full-photo"
+        role="img"
+        aria-label="Moon Scorched Bandfoto"
+      >
+        <span>
+          Moon Scorched — Hamm, Germany
+        </span>
       </div>
 
-      <div class="bio-wrap">
-        <article class="bio-card">
-          <h3>English</h3>
-          <p>Moon Scorched is an international hardcore band from Hamm, Germany, united by different cultural backgrounds and one shared vision: honest, heavy, and unapologetically intense hardcore.
+      <section
+        class="section"
+        id="shows"
+      >
+        <div class="eyebrow">
+          Live
+        </div>
 
-Built on crushing riffs, relentless grooves, and explosive breakdowns, their sound is direct, aggressive, and impossible to ignore. Influenced by bands like Desolated, Guilt Trip, and Hard Reset, Moon Scorched channel anger, determination, and raw emotion into songs that never let up.
-
-The stage is where the band truly comes alive.
-
-Moon Scorched is raw energy in motion. Every show is an explosion. Loud, relentless, and honest. Every riff carries weight, every breakdown demands a reaction, and every moment is driven by the connection between the band and the crowd. No theatrics. No pretending. Just pure intensity from the first note to the last.
-
-Moon Scorched are set to release their debut single, “White Hands,” on 19.08.2026—the first chapter of what’s to come.
-
-Line-up
-
-Alex — Drums
-Artem — Bass
-Pierre — Guitar
-Kos — Vocals</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="section" id="shows">
-      <div class="section-header">
-        <div class="section-label">Live</div>
         <h2>Shows</h2>
-      </div>
 
-      <div class="shows-list">
-        <div class="show-item">
-          <div class="show-date">28 Aug 2026</div>
-          <div class="show-main">
-            <strong>Galerie der Disziplinen</strong>
-            <span>Hamm, Germany</span>
+        <div class="shows-list">
+
+          <div class="show-item">
+
+            <div class="show-date">
+              28 Aug 2026
+            </div>
+
+            <div class="show-main">
+              <strong>
+                Galerie der Disziplinen
+              </strong>
+
+              <span>
+                Hamm, Germany
+              </span>
+            </div>
+
+            <div class="show-status">
+              Upcoming
+            </div>
+
           </div>
+
+          <div class="show-item">
+
+            <div class="show-date">
+              12 Sep 2026
+            </div>
+
+            <div class="show-main">
+              <strong>
+                H4 Stadtfest
+              </strong>
+
+              <span>
+                Hamm, Germany
+              </span>
+            </div>
+
+            <div class="show-status">
+              Upcoming
+            </div>
+
+          </div>
+
+          <div class="show-item">
+
+            <div class="show-date">
+              03 Oct 2026
+            </div>
+
+            <div class="show-main">
+              <strong>
+                Hardcore Fest
+              </strong>
+
+              <span>
+                Hamm, Germany
+              </span>
+            </div>
+
+            <div class="show-status">
+              Upcoming
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <section
+        class="section"
+        id="lineup"
+      >
+        <div class="eyebrow">
+          Members
         </div>
 
-        <div class="show-item">
-          <div class="show-date">12 Sep 2026</div>
-          <div class="show-main">
-            <strong>H4 Stadtfest</strong>
-            <span>Hamm, Germany</span>
+        <h2>Line-up</h2>
+
+        <div class="lineup-grid">
+
+          <div class="member">
+            <strong>Alex</strong>
+            <span>Drums</span>
           </div>
+
+          <div class="member">
+            <strong>Artem</strong>
+            <span>Bass</span>
+          </div>
+
+          <div class="member">
+            <strong>Pierre</strong>
+            <span>Guitar</span>
+          </div>
+
+          <div class="member">
+            <strong>Kos</strong>
+            <span>Vocals</span>
+          </div>
+
+        </div>
+      </section>
+
+      <section
+        class="section"
+        id="links"
+      >
+        <div class="eyebrow">
+          Connect
         </div>
 
-        <div class="show-item">
-          <div class="show-date">03 Oct 2026</div>
-          <div class="show-main">
-            <strong>Hardcore Fest</strong>
-            <span>Hamm, Germany</span>
-          </div>
-        </div>
-      </div>
-    </section>
+        <h2>Links</h2>
 
-    <footer class="footer">
-      © 2026 Moon Scorched — <a href="impressum.html">Impressum</a> — <a href="datenschutz.html">Datenschutz</a>
-    </footer>
-  </div>
+        <div class="links-row">
+
+          <a
+            class="social-link"
+            href="https://linktr.ee/Moon_Scorched"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <small>Everything</small>
+            <strong>Linktree ↗</strong>
+          </a>
+
+          <a
+            class="social-link"
+            href="mailto:contact@moonscorched.de"
+          >
+            <small>Booking / Contact</small>
+            <strong>Email ↗</strong>
+          </a>
+
+          <a
+            class="social-link"
+            href="#top"
+          >
+            <small>Moon Scorched</small>
+            <strong>Back to top ↑</strong>
+          </a>
+
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+
+    <div>
+      © 2026 Moon Scorched
+    </div>
+
+    <div class="footer-links">
+      <a href="impressum.html">
+        Impressum
+      </a>
+
+      <a href="datenschutz.html">
+        Datenschutz
+      </a>
+    </div>
+
+  </footer>
 
 </body>
 </html>
