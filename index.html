@@ -8,7 +8,7 @@
 
   <meta
     name="description"
-    content="Moon Scorched — international hardcore from Hamm, Germany. Debut single White Hands out 19.08.2026."
+    content="Moon Scorched — international hardcore from Hamm, Germany. Listen to the debut single White Hands and see upcoming live shows."
   />
 
   <style>
@@ -192,20 +192,12 @@
       gap: 10px 18px;
     }
 
-    .release-label,
-    .release-date {
+    .release-label {
+      color: var(--red);
       font-size: 12px;
-      font-weight: 800;
+      font-weight: 900;
       letter-spacing: 0.18em;
       text-transform: uppercase;
-    }
-
-    .release-label {
-      color: var(--muted);
-    }
-
-    .release-date {
-      color: #ffffff;
     }
 
     .release-title {
@@ -368,77 +360,59 @@
       text-transform: uppercase;
     }
 
-    /* BIO */
+    /* LIVE FEATURE */
 
-    .bio-layout {
-      margin-top: 44px;
-      display: grid;
-      grid-template-columns:
-        minmax(0, 1.2fr)
-        minmax(300px, 0.8fr);
-      gap: clamp(40px, 8vw, 110px);
-      align-items: start;
-    }
-
-    .bio-lead {
-      margin: 0;
-      font-size: clamp(26px, 3.7vw, 48px);
-      font-weight: 800;
-      line-height: 1.08;
-      letter-spacing: -0.025em;
-    }
-
-    .bio-copy p {
-      margin: 0 0 22px;
-      color: #d7d4cb;
-      font-size: 18px;
-      line-height: 1.72;
-    }
-
-    .quote {
-      margin: 34px 0 0;
-      padding-left: 20px;
-      border-left: 4px solid var(--red);
-      color: #ffffff;
-      font-size: 22px;
-      font-weight: 800;
-      line-height: 1.3;
-      text-transform: uppercase;
-    }
-
-    /* FULL-WIDTH BAND PHOTO */
-
-    .full-photo {
+    .live-feature {
       width: 100%;
-      min-height: 62vw;
-      max-height: 850px;
       position: relative;
+      min-height: min(76vw, 920px);
       border-bottom: 1px solid var(--line);
       background:
         linear-gradient(
           180deg,
-          transparent 55%,
-          rgba(0, 0, 0, 0.85) 100%
+          rgba(0, 0, 0, 0.04) 0%,
+          rgba(0, 0, 0, 0.08) 55%,
+          rgba(0, 0, 0, 0.92) 100%
         ),
-        url("moon-scorched_bandfoto_foto-alexander-marx.JPEG")
+        url("live-band.png")
           center center / cover no-repeat;
     }
 
-    .full-photo span {
+    .live-feature-copy {
       position: absolute;
       left: max(16px, calc((100vw - var(--max)) / 2));
-      bottom: 26px;
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: rgba(255, 255, 255, 0.72);
+      right: 16px;
+      bottom: 34px;
+      z-index: 2;
+    }
+
+    .live-feature-copy .eyebrow {
+      margin-bottom: 8px;
+    }
+
+    .live-feature-copy h2 {
+      max-width: 800px;
+      font-size: clamp(44px, 8vw, 105px);
     }
 
     /* SHOWS */
 
+    .shows-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+
+    .shows-note {
+      max-width: 420px;
+      color: var(--muted);
+      font-size: 15px;
+      text-align: right;
+    }
+
     .shows-list {
-      margin-top: 40px;
       border-top: 1px solid var(--line);
     }
 
@@ -479,34 +453,152 @@
       text-transform: uppercase;
     }
 
+    .past-shows {
+      margin-top: 54px;
+    }
+
+    .past-title {
+      margin-bottom: 14px;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .past-shows .show-item {
+      opacity: 0.58;
+    }
+
+    .past-shows .show-date {
+      color: var(--muted);
+    }
+
+    /* BIO */
+
+    .bio-layout {
+      margin-top: 44px;
+      display: grid;
+      grid-template-columns:
+        minmax(0, 1.2fr)
+        minmax(300px, 0.8fr);
+      gap: clamp(40px, 8vw, 110px);
+      align-items: start;
+    }
+
+    .bio-lead {
+      margin: 0;
+      font-size: clamp(26px, 3.7vw, 48px);
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -0.025em;
+    }
+
+    .bio-copy p {
+      margin: 0 0 22px;
+      color: #d7d4cb;
+      font-size: 18px;
+      line-height: 1.72;
+    }
+
+    .quote {
+      margin: 34px 0 0;
+      padding-left: 20px;
+      border-left: 4px solid var(--red);
+      color: #ffffff;
+      font-size: 22px;
+      font-weight: 800;
+      line-height: 1.3;
+      text-transform: uppercase;
+    }
+
     /* LINE-UP */
 
     .lineup-grid {
-      margin-top: 40px;
+      margin-top: 42px;
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
-      border-top: 1px solid var(--line);
-      border-left: 1px solid var(--line);
+      gap: 12px;
     }
 
     .member {
-      padding: 24px 20px;
-      border-right: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
+      position: relative;
+      min-height: 510px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: var(--surface);
+    }
+
+    .member img {
+      width: 100%;
+      height: 100%;
+      min-height: 510px;
+      object-fit: cover;
+      filter: grayscale(1) contrast(1.06);
+      transition:
+        transform 0.35s ease,
+        filter 0.35s ease;
+    }
+
+    .member::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(
+          180deg,
+          transparent 45%,
+          rgba(0, 0, 0, 0.92) 100%
+        );
+      pointer-events: none;
+    }
+
+    .member-info {
+      position: absolute;
+      z-index: 2;
+      left: 18px;
+      right: 18px;
+      bottom: 18px;
     }
 
     .member strong {
       display: block;
-      font-size: 25px;
+      font-size: 29px;
+      line-height: 1;
       text-transform: uppercase;
     }
 
     .member span {
-      color: var(--muted);
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 0.16em;
+      display: block;
+      margin-top: 7px;
+      color: #d5d1c8;
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
+    }
+
+    .member:hover img {
+      transform: scale(1.035);
+      filter: grayscale(1) contrast(1.16);
+    }
+
+    /* INDIVIDUAL CROPS */
+
+    .member-guitar img {
+      object-position: 42% 45%;
+    }
+
+    .member-bass img {
+      object-position: 50% 50%;
+    }
+
+    .member-drums img {
+      object-position: 50% 42%;
+    }
+
+    .member-vocals img {
+      object-position: 55% 46%;
     }
 
     /* LINKS */
@@ -577,14 +669,21 @@
 
     /* TABLET */
 
+    @media (max-width: 950px) {
+      .lineup-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .member,
+      .member img {
+        min-height: 620px;
+      }
+    }
+
     @media (max-width: 850px) {
       .release-grid,
       .bio-layout {
         grid-template-columns: 1fr;
-      }
-
-      .lineup-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
       .links-row {
@@ -597,6 +696,15 @@
 
       .show-status {
         display: none;
+      }
+
+      .shows-head {
+        display: block;
+      }
+
+      .shows-note {
+        margin-top: 18px;
+        text-align: left;
       }
     }
 
@@ -625,9 +733,11 @@
         width: 100%;
         justify-content: space-between;
         gap: 10px;
+        overflow-x: auto;
       }
 
       .nav-links a {
+        flex: 0 0 auto;
         font-size: 10px;
       }
 
@@ -680,9 +790,17 @@
         padding: 68px 0;
       }
 
-      .full-photo {
-        min-height: 92vw;
-        background-position: center;
+      .live-feature {
+        min-height: 105vw;
+        background-position: 50% center;
+      }
+
+      .live-feature-copy {
+        bottom: 24px;
+      }
+
+      .live-feature-copy h2 {
+        font-size: clamp(42px, 14vw, 76px);
       }
 
       .show-item {
@@ -691,7 +809,28 @@
       }
 
       .lineup-grid {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
+      }
+
+      .member,
+      .member img {
+        min-height: 128vw;
+      }
+
+      .member-guitar img {
+        object-position: 42% 48%;
+      }
+
+      .member-bass img {
+        object-position: 50% 48%;
+      }
+
+      .member-drums img {
+        object-position: 50% 42%;
+      }
+
+      .member-vocals img {
+        object-position: 55% 46%;
       }
 
       .release-meta {
@@ -725,9 +864,10 @@
         class="nav-links"
         aria-label="Hauptnavigation"
       >
-        <a href="#release">Release</a>
-        <a href="#bio">Bio</a>
+        <a href="#release">Music</a>
         <a href="#shows">Shows</a>
+        <a href="#bio">Bio</a>
+        <a href="#lineup">Band</a>
         <a href="#links">Links</a>
         <a href="mailto:contact@moonscorched.de">Contact</a>
       </nav>
@@ -756,20 +896,15 @@
         </p>
 
         <div class="release-strip">
+
           <span class="release-label">
-            Debut Single
+            Out now
           </span>
 
           <strong class="release-title">
             White Hands
           </strong>
 
-          <time
-            class="release-date"
-            datetime="2026-08-19"
-          >
-            19.08.2026
-          </time>
         </div>
 
         <div class="hero-actions">
@@ -780,21 +915,21 @@
             target="_blank"
             rel="noopener noreferrer"
           >
-            All Links
+            Listen to White Hands
           </a>
 
           <a
             class="btn btn-secondary"
             href="#shows"
           >
-            Shows
+            Upcoming Shows
           </a>
 
           <a
             class="btn btn-secondary"
             href="mailto:contact@moonscorched.de"
           >
-            Contact
+            Booking
           </a>
 
         </div>
@@ -809,6 +944,8 @@
         alt=""
         aria-hidden="true"
       />
+
+      <!-- RELEASE -->
 
       <section
         class="section"
@@ -826,26 +963,35 @@
           <div class="release-copy">
 
             <div class="eyebrow">
-              Debut Single
+              Debut Single — Out Now
             </div>
 
-            <h2>White Hands</h2>
+            <h2>
+              White Hands
+            </h2>
 
             <p>
-              The first chapter of what’s to come. Speed, Two-Steps,
-              explosive breaks and raw emotion. Moon Scorched release
-              their debut single “White Hands” on 19.08.2026.
+              The first chapter of what’s to come. Speed, two-steps,
+              explosive breaks and raw emotion. “White Hands” is the
+              debut single by Moon Scorched — built to move.
             </p>
 
             <div class="release-meta">
 
               <div>
-                <small>Release</small>
-                <strong>19.08.2026</strong>
+                <small>
+                  Released
+                </small>
+
+                <strong>
+                  19.08.2026
+                </strong>
               </div>
 
               <div>
-                <small>Listen</small>
+                <small>
+                  Listen
+                </small>
 
                 <strong>
                   <a
@@ -864,99 +1010,55 @@
         </div>
       </section>
 
+      <!-- LARGE LIVE IMAGE -->
+
       <section
-        class="section"
-        id="bio"
+        class="live-feature"
+        aria-label="Moon Scorched live"
       >
-        <div class="eyebrow">
-          About
-        </div>
 
-        <h2>Band Bio</h2>
+        <div class="live-feature-copy">
 
-        <div class="bio-layout">
-
-          <p class="bio-lead">
-            Moon Scorched is an international hardcore band from Hamm,
-            Germany, united by different cultural backgrounds and one
-            shared vision: honest, heavy, and unapologetically intense
-            hardcore.
-          </p>
-
-          <div class="bio-copy">
-
-            <p>
-              Built on crushing riffs, relentless grooves, and explosive
-              breakdowns, their sound is direct, aggressive, and impossible
-              to ignore. Influenced by bands like Desolated, Guilt Trip,
-              and Hard Reset, Moon Scorched channel anger, determination,
-              and raw emotion into songs that never let up.
-            </p>
-
-            <p>
-              The stage is where the band truly comes alive. Every show
-              is an explosion. Loud, relentless, and honest. Every riff
-              carries weight, every breakdown demands a reaction, and
-              every moment is driven by the connection between the band
-              and the crowd.
-            </p>
-
-            <p>
-              No theatrics. No pretending. Just pure intensity from the
-              first note to the last.
-            </p>
-
-            <div class="quote">
-              Raw energy in motion.
-            </div>
-
+          <div class="eyebrow">
+            Live
           </div>
+
+          <h2>
+            Built for the stage.
+          </h2>
+
         </div>
+
       </section>
 
-      <div
-        class="full-photo"
-        role="img"
-        aria-label="Moon Scorched Bandfoto"
-      >
-        <span>
-          Moon Scorched — Hamm, Germany
-        </span>
-      </div>
+      <!-- SHOWS -->
 
       <section
         class="section"
         id="shows"
       >
-        <div class="eyebrow">
-          Live
-        </div>
 
-        <h2>Shows</h2>
+        <div class="shows-head">
 
-        <div class="shows-list">
+          <div>
 
-          <div class="show-item">
-
-            <div class="show-date">
-              28 Aug 2026
+            <div class="eyebrow">
+              Live
             </div>
 
-            <div class="show-main">
-              <strong>
-                Galerie der Disziplinen
-              </strong>
-
-              <span>
-                Hamm, Germany
-              </span>
-            </div>
-
-            <div class="show-status">
-              Upcoming
-            </div>
+            <h2>
+              Shows
+            </h2>
 
           </div>
+
+          <div class="shows-note">
+            Upcoming dates and past shows. More announcements soon.
+          </div>
+
+        </div>
+
+        <div class="shows-list">
 
           <div class="show-item">
 
@@ -965,6 +1067,7 @@
             </div>
 
             <div class="show-main">
+
               <strong>
                 Trio Bar
               </strong>
@@ -972,6 +1075,7 @@
               <span>
                 Lemgo, Germany
               </span>
+
             </div>
 
             <div class="show-status">
@@ -987,6 +1091,7 @@
             </div>
 
             <div class="show-main">
+
               <strong>
                 H4 Stadtfest
               </strong>
@@ -994,6 +1099,7 @@
               <span>
                 Hamm, Germany
               </span>
+
             </div>
 
             <div class="show-status">
@@ -1009,6 +1115,7 @@
             </div>
 
             <div class="show-main">
+
               <strong>
                 Hardcore Fest
               </strong>
@@ -1016,6 +1123,7 @@
               <span>
                 Hamm, Germany
               </span>
+
             </div>
 
             <div class="show-status">
@@ -1025,52 +1133,226 @@
           </div>
 
         </div>
+
+        <div class="past-shows">
+
+          <div class="past-title">
+            Past
+          </div>
+
+          <div class="shows-list">
+
+            <div class="show-item">
+
+              <div class="show-date">
+                28 Aug 2026
+              </div>
+
+              <div class="show-main">
+
+                <strong>
+                  Galerie der Disziplinen
+                </strong>
+
+                <span>
+                  Hamm, Germany
+                </span>
+
+              </div>
+
+              <div class="show-status">
+                Played
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
       </section>
+
+      <!-- BIO -->
+
+      <section
+        class="section"
+        id="bio"
+      >
+
+        <div class="eyebrow">
+          About
+        </div>
+
+        <h2>
+          Band Bio
+        </h2>
+
+        <div class="bio-layout">
+
+          <p class="bio-lead">
+            Four people. Different backgrounds. One sound.
+            Moon Scorched is an international hardcore band from Hamm,
+            Germany.
+          </p>
+
+          <div class="bio-copy">
+
+            <p>
+              Built on crushing riffs, relentless grooves, two-steps
+              and explosive breakdowns, Moon Scorched turn anger,
+              determination and raw emotion into direct,
+              uncompromising hardcore.
+            </p>
+
+            <p>
+              Influenced by bands like Desolated, Guilt Trip and Hard Reset,
+              the band combines heavy grooves with the kind of energy that
+              only really makes sense when a room starts moving.
+            </p>
+
+            <p>
+              The stage is where Moon Scorched comes alive. Loud,
+              relentless and honest. No theatrics. No pretending.
+              Just intensity from the first note to the last.
+            </p>
+
+            <div class="quote">
+              Raw energy in motion.
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- LINE-UP -->
 
       <section
         class="section"
         id="lineup"
       >
+
         <div class="eyebrow">
           Members
         </div>
 
-        <h2>Line-up</h2>
+        <h2>
+          Line-up
+        </h2>
 
         <div class="lineup-grid">
 
-          <div class="member">
-            <strong>Alex</strong>
-            <span>Drums</span>
-          </div>
+          <!-- GUITAR -->
 
-          <div class="member">
-            <strong>Artem</strong>
-            <span>Bass</span>
-          </div>
+          <article class="member member-guitar">
 
-          <div class="member">
-            <strong>Pierre</strong>
-            <span>Guitar</span>
-          </div>
+            <img
+              src="live-guitar.png"
+              alt="Pierre — Guitar, Moon Scorched live"
+            />
 
-          <div class="member">
-            <strong>Kos</strong>
-            <span>Vocals</span>
-          </div>
+            <div class="member-info">
+
+              <strong>
+                Pierre
+              </strong>
+
+              <span>
+                Guitar
+              </span>
+
+            </div>
+
+          </article>
+
+          <!-- BASS -->
+
+          <article class="member member-bass">
+
+            <img
+              src="live-bass.png"
+              alt="Artem — Bass, Moon Scorched live"
+            />
+
+            <div class="member-info">
+
+              <strong>
+                Artem
+              </strong>
+
+              <span>
+                Bass
+              </span>
+
+            </div>
+
+          </article>
+
+          <!-- DRUMS -->
+
+          <article class="member member-drums">
+
+            <img
+              src="live-drums.png"
+              alt="Alex — Drums, Moon Scorched live"
+            />
+
+            <div class="member-info">
+
+              <strong>
+                Alex
+              </strong>
+
+              <span>
+                Drums
+              </span>
+
+            </div>
+
+          </article>
+
+          <!-- VOCALS -->
+
+          <article class="member member-vocals">
+
+            <img
+              src="live-vocals.png"
+              alt="Kos — Vocals, Moon Scorched live"
+            />
+
+            <div class="member-info">
+
+              <strong>
+                Kos
+              </strong>
+
+              <span>
+                Vocals
+              </span>
+
+            </div>
+
+          </article>
 
         </div>
+
       </section>
+
+      <!-- LINKS -->
 
       <section
         class="section"
         id="links"
       >
+
         <div class="eyebrow">
           Connect
         </div>
 
-        <h2>Links</h2>
+        <h2>
+          Links
+        </h2>
 
         <div class="links-row">
 
@@ -1080,30 +1362,53 @@
             target="_blank"
             rel="noopener noreferrer"
           >
-            <small>Everything</small>
-            <strong>Linktree</strong>
+
+            <small>
+              Music / Socials
+            </small>
+
+            <strong>
+              Linktree
+            </strong>
+
           </a>
 
           <a
             class="social-link"
             href="mailto:contact@moonscorched.de"
           >
-            <small>Booking / Contact</small>
-            <strong>Email</strong>
+
+            <small>
+              Booking / Contact
+            </small>
+
+            <strong>
+              Email
+            </strong>
+
           </a>
 
           <a
             class="social-link"
             href="#top"
           >
-            <small>Moon Scorched</small>
-            <strong>Back to top</strong>
+
+            <small>
+              Moon Scorched
+            </small>
+
+            <strong>
+              Back to top
+            </strong>
+
           </a>
 
         </div>
+
       </section>
 
     </div>
+
   </main>
 
   <footer class="footer">
@@ -1113,6 +1418,7 @@
     </div>
 
     <div class="footer-links">
+
       <a href="impressum.html">
         Impressum
       </a>
@@ -1120,6 +1426,7 @@
       <a href="datenschutz.html">
         Datenschutz
       </a>
+
     </div>
 
   </footer>
