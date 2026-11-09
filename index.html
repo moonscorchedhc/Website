@@ -20,13 +20,11 @@
       --muted: #aaaDA6;
       --line: rgba(255, 255, 255, 0.15);
 
-      /* EVERYDAY ERA */
       --green: #8cff69;
       --green-bright: #a7ff72;
       --green-dark: #1f5f35;
       --green-soft: rgba(140, 255, 105, 0.12);
 
-      /* Yellow-green tone from the promo projection */
       --acid: #c7ff62;
 
       --paper: #ece9df;
@@ -92,7 +90,6 @@
         );
 
       color: #050505;
-
       border-bottom: 2px solid #050505;
 
       box-shadow:
@@ -126,26 +123,20 @@
 
     .nav-links a {
       position: relative;
-
       font-size: 12px;
       font-weight: 900;
-
       letter-spacing: 0.15em;
       text-transform: uppercase;
     }
 
     .nav-links a::after {
       content: "";
-
       position: absolute;
       left: 0;
       right: 100%;
       bottom: -6px;
-
       height: 2px;
-
       background: #050505;
-
       transition: right 0.18s ease;
     }
 
@@ -159,7 +150,6 @@
 
     .hero {
       position: relative;
-
       min-height: calc(100svh - 70px);
 
       display: flex;
@@ -168,7 +158,6 @@
       overflow: hidden;
 
       border-bottom: 2px solid var(--green);
-
       background: #050805;
     }
 
@@ -195,7 +184,6 @@
 
     .hero::after {
       content: "";
-
       position: absolute;
       inset: 0;
 
@@ -297,8 +285,7 @@
       align-items: center;
       justify-content: center;
 
-      border:
-        1px solid rgba(255, 255, 255, 0.55);
+      border: 1px solid rgba(255, 255, 255, 0.55);
 
       font-size: 12px;
       font-weight: 900;
@@ -366,8 +353,7 @@
 
       white-space: nowrap;
 
-      animation:
-        loopMove 28s linear infinite;
+      animation: loopMove 28s linear infinite;
     }
 
     .loop-dot {
@@ -409,8 +395,7 @@
 
       width: min(78vw, 900px);
 
-      transform:
-        translate(-50%, -50%);
+      transform: translate(-50%, -50%);
 
       opacity: 0.08;
 
@@ -420,15 +405,13 @@
     }
 
     .section {
-      width:
-        min(var(--max), calc(100% - 32px));
+      width: min(var(--max), calc(100% - 32px));
 
       margin: 0 auto;
 
       padding: 96px 0;
 
-      border-bottom:
-        1px solid var(--line);
+      border-bottom: 1px solid var(--line);
     }
 
     .eyebrow {
@@ -446,8 +429,7 @@
     h2 {
       margin: 0;
 
-      font-size:
-        clamp(36px, 6vw, 74px);
+      font-size: clamp(36px, 6vw, 74px);
 
       line-height: 0.94;
 
@@ -467,8 +449,7 @@
         minmax(280px, 0.88fr)
         minmax(0, 1.12fr);
 
-      gap:
-        clamp(38px, 7vw, 100px);
+      gap: clamp(38px, 7vw, 100px);
 
       align-items: center;
     }
@@ -478,8 +459,7 @@
 
       background: #111111;
 
-      border:
-        1px solid var(--line);
+      border: 1px solid var(--line);
     }
 
     .cover-wrap::before {
@@ -487,13 +467,11 @@
 
       position: absolute;
 
-      inset:
-        14px -14px -14px 14px;
+      inset: 14px -14px -14px 14px;
 
       z-index: -1;
 
-      border:
-        1px solid var(--green);
+      border: 1px solid var(--green);
     }
 
     .cover-wrap img {
@@ -521,8 +499,7 @@
 
       color: #ffffff;
 
-      font-size:
-        clamp(22px, 3vw, 34px);
+      font-size: clamp(22px, 3vw, 34px);
 
       font-weight: 900;
 
@@ -536,8 +513,7 @@
 
       padding-top: 22px;
 
-      border-top:
-        1px solid var(--line);
+      border-top: 1px solid var(--line);
 
       display: grid;
 
@@ -578,15 +554,13 @@
     ========================================================= */
 
     .statement {
-      width:
-        min(var(--max), calc(100% - 32px));
+      width: min(var(--max), calc(100% - 32px));
 
       margin: 0 auto;
 
       padding: 100px 0;
 
-      border-bottom:
-        1px solid var(--line);
+      border-bottom: 1px solid var(--line);
     }
 
     .statement-text {
@@ -594,8 +568,7 @@
 
       margin: 0;
 
-      font-size:
-        clamp(40px, 7vw, 92px);
+      font-size: clamp(40px, 7vw, 92px);
 
       font-weight: 900;
 
@@ -619,11 +592,9 @@
 
       position: relative;
 
-      min-height:
-        min(72vw, 900px);
+      min-height: min(72vw, 900px);
 
-      border-bottom:
-        1px solid var(--line);
+      border-bottom: 1px solid var(--line);
 
       background:
         linear-gradient(
@@ -639,11 +610,10 @@
     .promo-feature-copy {
       position: absolute;
 
-      left:
-        max(
-          16px,
-          calc((100vw - var(--max)) / 2)
-        );
+      left: max(
+        16px,
+        calc((100vw - var(--max)) / 2)
+      );
 
       right: 16px;
       bottom: 38px;
@@ -654,8 +624,7 @@
     .promo-feature-copy h2 {
       max-width: 1000px;
 
-      font-size:
-        clamp(44px, 8vw, 105px);
+      font-size: clamp(44px, 8vw, 105px);
     }
 
     /* =========================================================
@@ -667,8 +636,7 @@
 
       align-items: end;
 
-      justify-content:
-        space-between;
+      justify-content: space-between;
 
       gap: 24px;
 
@@ -688,16 +656,12 @@
     .no-shows {
       padding: 30px 0;
 
-      border-top:
-        1px solid var(--line);
-
-      border-bottom:
-        1px solid var(--line);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
 
       color: #d5d2ca;
 
-      font-size:
-        clamp(20px, 3vw, 30px);
+      font-size: clamp(20px, 3vw, 30px);
 
       font-weight: 800;
 
@@ -705,8 +669,7 @@
     }
 
     .shows-list {
-      border-top:
-        1px solid var(--line);
+      border-top: 1px solid var(--line);
     }
 
     .show-item {
@@ -721,8 +684,7 @@
 
       padding: 25px 0;
 
-      border-bottom:
-        1px solid var(--line);
+      border-bottom: 1px solid var(--line);
     }
 
     .show-date {
@@ -740,8 +702,7 @@
     .show-main strong {
       display: block;
 
-      font-size:
-        clamp(20px, 3vw, 31px);
+      font-size: clamp(20px, 3vw, 31px);
 
       line-height: 1.1;
 
@@ -805,8 +766,7 @@
         minmax(0, 1.2fr)
         minmax(300px, 0.8fr);
 
-      gap:
-        clamp(40px, 8vw, 110px);
+      gap: clamp(40px, 8vw, 110px);
 
       align-items: start;
     }
@@ -814,8 +774,7 @@
     .bio-lead {
       margin: 0;
 
-      font-size:
-        clamp(26px, 3.7vw, 48px);
+      font-size: clamp(26px, 3.7vw, 48px);
 
       font-weight: 800;
 
@@ -839,8 +798,7 @@
 
       padding-left: 20px;
 
-      border-left:
-        4px solid var(--green);
+      border-left: 4px solid var(--green);
 
       color: #ffffff;
 
@@ -887,8 +845,7 @@
 
       overflow: hidden;
 
-      border:
-        1px solid var(--line);
+      border: 1px solid var(--line);
 
       background: var(--surface);
     }
@@ -996,15 +953,13 @@
       grid-template-columns:
         240px minmax(0, 1fr);
 
-      gap:
-        clamp(30px, 6vw, 70px);
+      gap: clamp(30px, 6vw, 70px);
 
       align-items: center;
     }
 
     .previous-cover {
-      border:
-        1px solid var(--line);
+      border: 1px solid var(--line);
     }
 
     .previous-cover img {
@@ -1020,8 +975,7 @@
     .previous-copy h3 {
       margin: 5px 0 14px;
 
-      font-size:
-        clamp(32px, 5vw, 60px);
+      font-size: clamp(32px, 5vw, 60px);
 
       line-height: 1;
 
@@ -1052,11 +1006,8 @@
       grid-template-columns:
         repeat(3, minmax(0, 1fr));
 
-      border-top:
-        1px solid var(--line);
-
-      border-left:
-        1px solid var(--line);
+      border-top: 1px solid var(--line);
+      border-left: 1px solid var(--line);
     }
 
     .social-link {
@@ -1068,14 +1019,10 @@
 
       flex-direction: column;
 
-      justify-content:
-        space-between;
+      justify-content: space-between;
 
-      border-right:
-        1px solid var(--line);
-
-      border-bottom:
-        1px solid var(--line);
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
 
       transition:
         background 0.15s ease,
@@ -1095,8 +1042,7 @@
     }
 
     .social-link strong {
-      font-size:
-        clamp(21px, 3vw, 31px);
+      font-size: clamp(21px, 3vw, 31px);
 
       text-transform: uppercase;
     }
@@ -1116,8 +1062,7 @@
     ========================================================= */
 
     .footer {
-      width:
-        min(var(--max), calc(100% - 32px));
+      width: min(var(--max), calc(100% - 32px));
 
       margin: 0 auto;
 
@@ -1125,8 +1070,7 @@
 
       display: flex;
 
-      justify-content:
-        space-between;
+      justify-content: space-between;
 
       gap: 20px;
 
@@ -1203,7 +1147,7 @@
     }
 
     /* =========================================================
-       MOBILE
+       MOBILE HERO + MOBILE LAYOUT
     ========================================================= */
 
     @media (max-width: 700px) {
@@ -1233,8 +1177,7 @@
       .nav-links {
         width: 100%;
 
-        justify-content:
-          space-between;
+        justify-content: space-between;
 
         gap: 10px;
 
@@ -1247,33 +1190,86 @@
         font-size: 10px;
       }
 
+      /* -----------------------------------------
+         NEW MOBILE HERO
+      ----------------------------------------- */
+
       .hero {
-        min-height: 84svh;
+        min-height: auto;
+
+        display: block;
+
+        background: #030504;
+
+        border-bottom:
+          2px solid var(--green);
       }
 
       .hero-bg {
-        background-position:
-          52% center;
+        height: 66vw;
+
+        min-height: 330px;
+        max-height: 470px;
+
+        inset: 0 0 auto 0;
+
+        background:
+          linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0.01) 0%,
+            rgba(0, 0, 0, 0.01) 48%,
+            rgba(3, 5, 4, 0.22) 67%,
+            rgba(3, 5, 4, 0.72) 84%,
+            #030504 100%
+          ),
+          url("Promo Everyday Full Band.jpeg")
+            center 40% / cover no-repeat;
+
+        filter:
+          contrast(1.03)
+          saturate(1.03);
+
+        transform: none;
       }
 
       .hero::after {
         background:
           linear-gradient(
             180deg,
-            rgba(0, 0, 0, 0.04),
-            rgba(0, 0, 0, 0.88)
+            transparent 0%,
+            transparent 42%,
+            rgba(3, 5, 4, 0.08) 57%,
+            rgba(3, 5, 4, 0.60) 75%,
+            #030504 91%,
+            #030504 100%
           );
       }
 
       .hero-inner {
+        width: calc(100% - 30px);
+
+        margin: 0 auto;
+
         padding:
-          160px 0 34px;
+          300px 0 38px;
       }
 
       .hero-logo {
-        width: 94vw;
+        width: 100%;
 
-        max-height: 145px;
+        max-height: 130px;
+
+        object-position: center;
+
+        margin: 0 auto;
+      }
+
+      .hero-kicker {
+        margin-top: 22px;
+
+        font-size: 11px;
+
+        letter-spacing: 0.26em;
       }
 
       .release-strip {
@@ -1282,11 +1278,21 @@
         flex-direction: column;
 
         gap: 6px;
+
+        margin-top: 12px;
       }
 
       .release-title {
         font-size:
-          clamp(48px, 17vw, 78px);
+          clamp(48px, 16vw, 74px);
+
+        letter-spacing: -0.045em;
+      }
+
+      .hero-date {
+        margin-top: 17px;
+
+        font-size: 15px;
       }
 
       .hero-actions {
@@ -1294,11 +1300,27 @@
 
         grid-template-columns:
           1fr 1fr;
+
+        gap: 9px;
+
+        margin-top: 28px;
       }
 
       .hero-actions .btn:first-child {
         grid-column: 1 / -1;
       }
+
+      .btn {
+        min-height: 54px;
+
+        padding: 0 12px;
+
+        font-size: 11px;
+      }
+
+      /* -----------------------------------------
+         REST OF MOBILE
+      ----------------------------------------- */
 
       .section,
       .statement {
@@ -1357,6 +1379,28 @@
         flex-direction: column;
       }
     }
+
+    /* EXTRA SMALL PHONES */
+
+    @media (max-width: 430px) {
+
+      .hero-bg {
+        height: 78vw;
+        min-height: 315px;
+
+        background-position:
+          center 38%;
+      }
+
+      .hero-inner {
+        padding-top: 285px;
+      }
+
+      .release-title {
+        font-size: 15.5vw;
+      }
+    }
+
   </style>
 </head>
 
@@ -1388,29 +1432,12 @@
         aria-label="Main navigation"
       >
 
-        <a href="#release">
-          Music
-        </a>
-
-        <a href="#shows">
-          Shows
-        </a>
-
-        <a href="#bio">
-          Bio
-        </a>
-
-        <a href="#lineup">
-          Band
-        </a>
-
-        <a href="#links">
-          Links
-        </a>
-
-        <a href="mailto:contact@moonscorched.de">
-          Contact
-        </a>
+        <a href="#release">Music</a>
+        <a href="#shows">Shows</a>
+        <a href="#bio">Bio</a>
+        <a href="#lineup">Band</a>
+        <a href="#links">Links</a>
+        <a href="mailto:contact@moonscorched.de">Contact</a>
 
       </nav>
 
@@ -1908,8 +1935,6 @@
 
         <div class="lineup-grid">
 
-          <!-- PIERRE -->
-
           <article class="member member-guitar">
 
             <img
@@ -1930,8 +1955,6 @@
             </div>
 
           </article>
-
-          <!-- KOS -->
 
           <article class="member member-vocals">
 
@@ -1954,8 +1977,6 @@
 
           </article>
 
-          <!-- ARTEM -->
-
           <article class="member member-bass">
 
             <img
@@ -1976,8 +1997,6 @@
             </div>
 
           </article>
-
-          <!-- ALEX -->
 
           <article class="member member-drums">
 
@@ -2125,10 +2144,6 @@
     </div>
 
   </main>
-
-  <!-- =======================================================
-       FOOTER
-  ======================================================== -->
 
   <footer class="footer">
 
