@@ -627,132 +627,176 @@
       font-size: clamp(44px, 8vw, 105px);
     }
 
-    /* =========================================================
-       SHOWS
-    ========================================================= */
+          <!-- ===================================================
+           SHOWS
+      ==================================================== -->
 
-    .shows-head {
-      display: flex;
+      <section
+        class="section"
+        id="shows"
+      >
 
-      align-items: end;
+        <div class="shows-head">
 
-      justify-content: space-between;
+          <div>
 
-      gap: 24px;
+            <div class="eyebrow">
+              Live
+            </div>
 
-      margin-bottom: 40px;
-    }
+            <h2>
+              Shows
+            </h2>
 
-    .shows-note {
-      max-width: 420px;
+          </div>
 
-      color: var(--muted);
+          <div class="shows-note">
+            See you in the pit.
+          </div>
 
-      font-size: 15px;
+        </div>
 
-      text-align: right;
-    }
+        <!-- UPCOMING SHOWS -->
 
-    .no-shows {
-      padding: 30px 0;
+        <div class="shows-list">
 
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
+          <div class="show-item">
 
-      color: #d5d2ca;
+            <div class="show-date">
+              19 Dec 2026
+            </div>
 
-      font-size: clamp(20px, 3vw, 30px);
+            <div class="show-main">
 
-      font-weight: 800;
+              <strong>
+                Kutscherstube
+              </strong>
 
-      text-transform: uppercase;
-    }
+              <span>
+                Dinslaken, Germany · w/ Strength
+              </span>
 
-    .shows-list {
-      border-top: 1px solid var(--line);
-    }
+            </div>
 
-    .show-item {
-      display: grid;
+            <div class="show-status">
+              Upcoming
+            </div>
 
-      grid-template-columns:
-        190px minmax(0, 1fr) auto;
+          </div>
 
-      gap: 24px;
+        </div>
 
-      align-items: center;
+        <!-- PAST SHOWS -->
 
-      padding: 25px 0;
+        <div class="past-shows">
 
-      border-bottom: 1px solid var(--line);
-    }
+          <div class="past-title">
+            Past Shows
+          </div>
 
-    .show-date {
-      color: var(--green);
+          <div class="shows-list">
 
-      font-size: 13px;
+            <div class="show-item">
 
-      font-weight: 900;
+              <div class="show-date">
+                03 Oct 2026
+              </div>
 
-      letter-spacing: 0.14em;
+              <div class="show-main">
 
-      text-transform: uppercase;
-    }
+                <strong>
+                  Hardcore Fest
+                </strong>
 
-    .show-main strong {
-      display: block;
+                <span>
+                  Hamm, Germany
+                </span>
 
-      font-size: clamp(20px, 3vw, 31px);
+              </div>
 
-      line-height: 1.1;
+              <div class="show-status">
+                Played
+              </div>
 
-      text-transform: uppercase;
-    }
+            </div>
 
-    .show-main span {
-      color: var(--muted);
+            <div class="show-item">
 
-      font-size: 16px;
-    }
+              <div class="show-date">
+                12 Sep 2026
+              </div>
 
-    .show-status {
-      color: var(--muted);
+              <div class="show-main">
 
-      font-size: 11px;
+                <strong>
+                  H4 Stadtfest
+                </strong>
 
-      font-weight: 800;
+                <span>
+                  Hamm, Germany
+                </span>
 
-      letter-spacing: 0.15em;
+              </div>
 
-      text-transform: uppercase;
-    }
+              <div class="show-status">
+                Played
+              </div>
 
-    .past-shows {
-      margin-top: 54px;
-    }
+            </div>
 
-    .past-title {
-      margin-bottom: 14px;
+            <div class="show-item">
 
-      color: var(--muted);
+              <div class="show-date">
+                05 Sep 2026
+              </div>
 
-      font-size: 11px;
+              <div class="show-main">
 
-      font-weight: 900;
+                <strong>
+                  Trio Bar
+                </strong>
 
-      letter-spacing: 0.2em;
+                <span>
+                  Lemgo, Germany
+                </span>
 
-      text-transform: uppercase;
-    }
+              </div>
 
-    .past-shows .show-item {
-      opacity: 0.58;
-    }
+              <div class="show-status">
+                Played
+              </div>
 
-    .past-shows .show-date {
-      color: var(--muted);
-    }
+            </div>
 
+            <div class="show-item">
+
+              <div class="show-date">
+                28 Aug 2026
+              </div>
+
+              <div class="show-main">
+
+                <strong>
+                  Galerie der Disziplinen
+                </strong>
+
+                <span>
+                  Hamm, Germany
+                </span>
+
+              </div>
+
+              <div class="show-status">
+                Played
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
     /* =========================================================
        BIO
     ========================================================= */
