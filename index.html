@@ -627,176 +627,117 @@
       font-size: clamp(44px, 8vw, 105px);
     }
 
-          <!-- ===================================================
-           SHOWS
-      ==================================================== -->
+    /* =========================================================
+       SHOWS
+    ========================================================= */
 
-      <section
-        class="section"
-        id="shows"
-      >
+    .shows-head {
+      display: flex;
 
-        <div class="shows-head">
+      align-items: end;
 
-          <div>
+      justify-content: space-between;
 
-            <div class="eyebrow">
-              Live
-            </div>
+      gap: 24px;
 
-            <h2>
-              Shows
-            </h2>
+      margin-bottom: 40px;
+    }
 
-          </div>
+    .shows-note {
+      max-width: 420px;
 
-          <div class="shows-note">
-            See you in the pit.
-          </div>
+      color: var(--muted);
 
-        </div>
+      font-size: 15px;
 
-        <!-- UPCOMING SHOWS -->
+      text-align: right;
+    }
 
-        <div class="shows-list">
+    .shows-list {
+      border-top: 1px solid var(--line);
+    }
 
-          <div class="show-item">
+    .show-item {
+      display: grid;
 
-            <div class="show-date">
-              19 Dec 2026
-            </div>
+      grid-template-columns:
+        190px minmax(0, 1fr) auto;
 
-            <div class="show-main">
+      gap: 24px;
 
-              <strong>
-                Kutscherstube
-              </strong>
+      align-items: center;
 
-              <span>
-                Dinslaken, Germany · w/ Strength
-              </span>
+      padding: 25px 0;
 
-            </div>
+      border-bottom: 1px solid var(--line);
+    }
 
-            <div class="show-status">
-              Upcoming
-            </div>
+    .show-date {
+      color: var(--green);
 
-          </div>
+      font-size: 13px;
 
-        </div>
+      font-weight: 900;
 
-        <!-- PAST SHOWS -->
+      letter-spacing: 0.14em;
 
-        <div class="past-shows">
+      text-transform: uppercase;
+    }
 
-          <div class="past-title">
-            Past Shows
-          </div>
+    .show-main strong {
+      display: block;
 
-          <div class="shows-list">
+      font-size: clamp(20px, 3vw, 31px);
 
-            <div class="show-item">
+      line-height: 1.1;
 
-              <div class="show-date">
-                03 Oct 2026
-              </div>
+      text-transform: uppercase;
+    }
 
-              <div class="show-main">
+    .show-main span {
+      color: var(--muted);
 
-                <strong>
-                  Hardcore Fest
-                </strong>
+      font-size: 16px;
+    }
 
-                <span>
-                  Hamm, Germany
-                </span>
+    .show-status {
+      color: var(--muted);
 
-              </div>
+      font-size: 11px;
 
-              <div class="show-status">
-                Played
-              </div>
+      font-weight: 800;
 
-            </div>
+      letter-spacing: 0.15em;
 
-            <div class="show-item">
+      text-transform: uppercase;
+    }
 
-              <div class="show-date">
-                12 Sep 2026
-              </div>
+    .past-shows {
+      margin-top: 54px;
+    }
 
-              <div class="show-main">
+    .past-title {
+      margin-bottom: 14px;
 
-                <strong>
-                  H4 Stadtfest
-                </strong>
+      color: var(--muted);
 
-                <span>
-                  Hamm, Germany
-                </span>
+      font-size: 11px;
 
-              </div>
+      font-weight: 900;
 
-              <div class="show-status">
-                Played
-              </div>
+      letter-spacing: 0.2em;
 
-            </div>
+      text-transform: uppercase;
+    }
 
-            <div class="show-item">
+    .past-shows .show-item {
+      opacity: 0.58;
+    }
 
-              <div class="show-date">
-                05 Sep 2026
-              </div>
+    .past-shows .show-date {
+      color: var(--muted);
+    }
 
-              <div class="show-main">
-
-                <strong>
-                  Trio Bar
-                </strong>
-
-                <span>
-                  Lemgo, Germany
-                </span>
-
-              </div>
-
-              <div class="show-status">
-                Played
-              </div>
-
-            </div>
-
-            <div class="show-item">
-
-              <div class="show-date">
-                28 Aug 2026
-              </div>
-
-              <div class="show-main">
-
-                <strong>
-                  Galerie der Disziplinen
-                </strong>
-
-                <span>
-                  Hamm, Germany
-                </span>
-
-              </div>
-
-              <div class="show-status">
-                Played
-              </div>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
     /* =========================================================
        BIO
     ========================================================= */
@@ -1235,7 +1176,7 @@
       }
 
       /* -----------------------------------------
-         NEW MOBILE HERO
+         MOBILE HERO
       ----------------------------------------- */
 
       .hero {
@@ -1742,7 +1683,7 @@
           </div>
 
           <h2>
-            Always busy.<br>
+            Always working.<br>
             Going nowhere.
           </h2>
 
@@ -1774,14 +1715,42 @@
           </div>
 
           <div class="shows-note">
-            New dates will be announced here.
+            See you in the pit.
           </div>
 
         </div>
 
-        <div class="no-shows">
-          No upcoming shows announced — more soon.
+        <!-- UPCOMING SHOW -->
+
+        <div class="shows-list">
+
+          <div class="show-item">
+
+            <div class="show-date">
+              19 Dec 2026
+            </div>
+
+            <div class="show-main">
+
+              <strong>
+                Kutscherstube
+              </strong>
+
+              <span>
+                Dinslaken, Germany · w/ Strength
+              </span>
+
+            </div>
+
+            <div class="show-status">
+              Upcoming
+            </div>
+
+          </div>
+
         </div>
+
+        <!-- PAST SHOWS -->
 
         <div class="past-shows">
 
